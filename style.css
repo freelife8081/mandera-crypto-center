@@ -69,7 +69,7 @@ section {
 }
 
 .registration {
-    background-color: purple;
+    background-color: #fff;
     color: #333;
     animation: slideInFromTop 1.5s;
     padding-top: 20px;
