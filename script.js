@@ -2,24 +2,33 @@ document.addEventListener("DOMContentLoaded", function() {
     // Countdown timer setup
     const targetDate = new Date("January 1, 2025 00:00:00").getTime();
 
+    function getRandomFlicker() {
+        return Math.floor(Math.random() * 10);  // random digit from 0-9
+    }
+
     function updateCountdown() {
         const now = new Date().getTime();
         const distance = targetDate - now;
 
-        // Calculate days, hours, minutes, and seconds
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        // Display the result in the timer element
-        document.getElementById("timer").textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-
-        // If the countdown is over, display a message
         if (distance < 0) {
             clearInterval(countdownInterval);
             document.getElementById("timer").textContent = "Class has started!";
+            return;
         }
+
+        // Temporary flickering effect with random digits
+        document.getElementById("timer").textContent = `${getRandomFlicker()}d ${getRandomFlicker()}h ${getRandomFlicker()}m ${getRandomFlicker()}s`;
+
+        // Set actual values after flicker effect
+        setTimeout(() => {
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the result in the timer element
+            document.getElementById("timer").textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }, 200); // Short delay for flicker effect
     }
 
     // Update the countdown every 1 second
