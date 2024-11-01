@@ -142,3 +142,18 @@ footer {
     from { transform: translateY(-100%); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
 }
+
+.countdown {
+    text-align: center;
+    background-color: #ffdd57;
+    color: #333;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    animation: fadeIn 1.5s;
+}
+
+#timer {
+    font-size: 2em;
+    font-weight: bold;
+}
