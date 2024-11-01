@@ -3,17 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lessons</title>
-    <link rel="stylesheet" href="lessons.css"> <!-- Optional: Link to your CSS file -->
+    <title>Lesson Progress Tracker</title>
+    <style>
+        .progress-bar {
+            width: 100%;
+            background-color: #ddd;
+            margin-top: 20px;
+        }
+        .progress-fill {
+            height: 20px;
+            background-color: #4caf50;
+            width: 0;
+            transition: width 0.5s;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Lessons</h1>
-    </header>
-    <section id="lesson-container">
-        <!-- Lessons will be loaded here -->
-    </section>
+    <h1>Lessons</h1>
+    <div id="lessonList"></div>
+    <div class="progress-bar">
+        <div id="progressFill" class="progress-fill"></div>
+    </div>
+    <p id="progressText">Progress: 0%</p>
 
-    <script src="loadLessons.js"></script> <!-- Link to the JavaScript file -->
+    <script>
+        // Fetch and render lessons
+        fetch("lessons.json")
+            .then(response => response.json())
+            .then(lessons => {
+                const lessonList = document.getElementById("lessonList");
+                lessons.forEach(lesson => {
+                    const lessonItem = document.createElement("div");
+                    lessonItem.innerHTML = `
+                        <input type="checkbox" id="lesson${lesson.id}" ${localStorage.getItem(`lesson${lesson.id}`) ? "checked" : ""} />
+                        <label for="lesson${lesson.id}">${lesson.title}</label>
+                        <a href="${lesson.url}">Open Lesson</a>
+                    `;
+                    lessonList.appendChild(lessonItem);
+
+                    // Track checkbox change
+                    document.getElementById(`lesson${lesson.id}`).addEventListener("change", (event) => {
+                        if (event.target.checked) {
+                            localStorage.setItem(`lesson${lesson.id}`, true);
+                        } else {
+                            localStorage.removeItem(`lesson${lesson.id}`);
+                        }
+                        updateProgress(lessons.length);
+                    });
+                });
+                updateProgress(lessons.length);
+            });
+
+        // Calculate and update progress
+        function updateProgress(totalLessons) {
+            const completedLessons = Array.from({ length: totalLessons }, (_, i) => `lesson${i+1}`).filter(id => localStorage.getItem(id)).length;
+            const progressPercent = Math.round((completedLessons / totalLessons) * 100);
+            document.getElementById("progressFill").style.width = `${progressPercent}%`;
+            document.getElementById("progressText").textContent = `Progress: ${progressPercent}%`;
+        }
+    </script>
 </body>
 </html>
