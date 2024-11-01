@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Set the target date for 3 days from now
-    const targetDate = new Date();
-    targetDate.setDate(targetDate.getDate() + 3); // Add 3 days
+    // Countdown timer setup
+    const targetDate = new Date("November 4, 2024 00:00:00").getTime(); // Update this date to three days from today.
 
     function updateCountdown() {
         const now = new Date().getTime();
@@ -10,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // Calculate days, hours, minutes, and seconds
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
         const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const minutes = Math.floor((distance % (1000 * 60)) / (1000 * 60));
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
         // Display the result in the timer element
@@ -34,17 +33,21 @@ document.addEventListener("DOMContentLoaded", function() {
         const phone = document.getElementById("phone").value;
         const age = document.getElementById("age").value;
         const gender = document.getElementById("gender").value;
+        const referrerName = document.getElementById("referrerName").value;
+        const referrerPhone = document.getElementById("referrerPhone").value;
+        const learnerPhoto = document.getElementById("learnerPhoto").files[0];
         const screenshot = document.getElementById("screenshot").files[0];
 
-        if (!screenshot) {
-            document.getElementById("statusMessage").textContent = "Please upload a payment screenshot.";
+        if (!screenshot || !learnerPhoto) {
+            document.getElementById("statusMessage").textContent = "Please upload your photo and payment screenshot.";
             return;
         }
 
         const formData = new FormData();
         formData.append("chat_id", "7361816575"); // Bot chat ID
-        formData.append("caption", `Name: ${name}\nPhone: ${phone}\nAge: ${age}\nGender: ${gender}`);
-        formData.append("photo", screenshot);
+        formData.append("caption", `Name: ${name}\nPhone: ${phone}\nAge: ${age}\nGender: ${gender}\nReferrer: ${referrerName}\nReferrer Phone: ${referrerPhone}`);
+        formData.append("photo", learnerPhoto);
+        formData.append("screenshot", screenshot);
 
         try {
             const response = await fetch(`https://api.telegram.org/bot7527930234:AAHjjHCn1hR-an2QDCziqELvjs637uz5u0A/sendPhoto`, {
