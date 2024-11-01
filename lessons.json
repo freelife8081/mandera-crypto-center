@@ -1,15 +1,17 @@
-{
-    "lessons": [
-        {
-            "title": "Introduction to Cryptocurrency",
-            "description": "Learn the basics of cryptocurrency, its history, and its significance.",
-            "link": "introduction.html"
-        },
-        {
-            "title": "Blockchain Technology",
-            "description": "Understand the technology behind cryptocurrencies and how it works.",
-            "link": "#"
-        }
-        // Add more lessons here as needed
-    ]
-}
+[
+    {
+        "title": "Introduction to Cryptocurrency",
+        "description": "Learn the basics of cryptocurrency, how it works, and why it's becoming popular.",
+        "link": "introduction.html"
+    },
+    {
+        "title": "Blockchain Technology",
+        "description": "An in-depth look at blockchain technology and its applications beyond cryptocurrency.",
+        "link": "blockchain.html"
+    },
+    {
+        "title": "Crypto Wallets",
+        "description": "Understanding crypto wallets, types, and how to secure your assets.",
+        "link": "wallets.html"
+    }
+]
