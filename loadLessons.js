@@ -1,35 +1,29 @@
-document.addEventListener("DOMContentLoaded", function() {
-    fetch('lessons.json')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(data => {
-            const lessonContainer = document.getElementById("lesson-container");
-            data.forEach(lesson => {
-                // Create a new element for each lesson
-                const lessonDiv = document.createElement("div");
-                lessonDiv.className = "lesson";
+document.addEventListener("DOMContentLoaded", async function() {
+    const lessonList = document.getElementById("lessonList");
 
-                // Add lesson title, description, and progress
-                lessonDiv.innerHTML = `
-                    <h2>${lesson.title}</h2>
-                    <p>${lesson.description}</p>
-                    <div class="progress-bar-container">
-                        <div class="progress-bar" style="width: ${lesson.progress}%;"></div>
-                    </div>
-                    <p>${lesson.progress}% complete</p>
-                    <a href="${lesson.link}" target="_blank">Read More</a>
-                `;
-                
-                // Append to the container
-                lessonContainer.appendChild(lessonDiv);
-            });
-        })
-        .catch(error => {
-            console.error("Error fetching lessons:", error);
-            document.getElementById("lesson-container").innerHTML = "<p>Could not load lessons.</p>";
-        });
+    // Fetch lessons from lessons.json
+    const response = await fetch("lessons.json");
+    const lessons = await response.json();
+
+    // Populate lessons and show progress bar
+    lessons.forEach((lesson, index) => {
+        const lessonDiv = document.createElement("div");
+        lessonDiv.className = "lesson-item";
+
+        const lessonTitle = document.createElement("h3");
+        lessonTitle.textContent = lesson.title;
+
+        const progressContainer = document.createElement("div");
+        progressContainer.className = "progress-bar";
+        const progressBar = document.createElement("div");
+        progressBar.className = "progress";
+        
+        progressBar.style.width = `${lesson.progress}%`; // Set width based on lesson progress
+        progressContainer.appendChild(progressBar);
+
+        // Append title and progress bar to lesson div
+        lessonDiv.appendChild(lessonTitle);
+        lessonDiv.appendChild(progressContainer);
+        lessonList.appendChild(lessonDiv);
+    });
 });
