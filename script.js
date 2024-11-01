@@ -1,18 +1,26 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Countdown timer setup
-    const targetDate = new Date("January 1, 2025 00:00:00").getTime();
+    // Countdown timer setup for next Monday at 10:30 AM
+    function getNextMondayAtTime(hour, minute) {
+        const now = new Date();
+        const dayOfWeek = now.getDay(); // 0 = Sunday, 1 = Monday, etc.
+        const daysUntilMonday = (8 - dayOfWeek) % 7 || 7; // Days until next Monday
+        const nextMonday = new Date(now);
+        nextMonday.setDate(now.getDate() + daysUntilMonday);
+        nextMonday.setHours(hour, minute, 0, 0); // Set to the desired hour and minute
+
+        return nextMonday.getTime();
+    }
 
     function updateCountdown() {
+        const targetDate = getNextMondayAtTime(10, 30); // Set countdown to Monday 10:30 AM
         const now = new Date().getTime();
         const distance = targetDate - now;
 
-        // Calculate days, hours, minutes, and seconds
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
         const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60)) / (1000 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        // Display the result in the timer element
         document.getElementById("timer").textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 
         // If the countdown is over, display a message
@@ -43,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function() {
             return;
         }
 
-        // Send the learner photo first
+        // Send the learner photo with details
         const formDataPhoto = new FormData();
         formDataPhoto.append("chat_id", "7361816575"); // Bot chat ID
         formDataPhoto.append("photo", learnerPhoto);
@@ -60,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
             // Check if the response from Telegram API was successful
             if (responsePhoto.ok && resultPhoto.ok) {
-                // Now send the payment screenshot if needed, or do whatever is necessary
+                // Send the payment screenshot
                 const formDataScreenshot = new FormData();
                 formDataScreenshot.append("chat_id", "7361816575"); // Bot chat ID
                 formDataScreenshot.append("photo", screenshot);
