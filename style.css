@@ -1,149 +1,14 @@
-/* Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* General Body Styling */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f9;
-}
-
-header {
-    text-align: center;
-    padding: 50px;
-    background: linear-gradient(135deg, #007acc, #00c9a7);
-    color: #fff;
-    animation: fadeIn 2s;
-}
-
-h1 {
-    font-size: 2.5em;
-}
-
-header p {
-    font-size: 1.2em;
-}
-
-.tg-link {
-    margin-top: 20px;
-    display: inline-block;
-    background: #ffdd57;
     color: #333;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: transform 0.2s;
-}
-
-.tg-link:hover {
-    transform: scale(1.1);
-}
-
-section {
-    padding: 30px;
     text-align: center;
-    margin: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0;
+    padding: 0;
 }
 
-.intro {
-    background-color: #ffdd57;
-    color: #333;
-    animation: slideInFromLeft 1.5s;
-}
-
-.referral {
-    background-color: #007acc;
-    color: #fff;
-    animation: slideInFromRight 1.5s;
-}
-
-.freedom {
-    background-color: #00c9a7;
-    color: #fff;
-    animation: slideInFromBottom 1.5s;
-}
-
-.registration {
-    background-color: #f0f0f0;
-    color: #333;
-    animation: slideInFromTop 1.5s;
-    padding-top: 20px;
-}
-
-label {
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
-}
-
-input[type="text"], input[type="tel"], input[type="number"], select, input[type="file"] {
-    width: 90%;
-    padding: 8px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-button {
-    margin-top: 15px;
-    padding: 10px 20px;
-    background-color: #007acc;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #005f99;
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #333;
-    color: #fff;
-}
-
-#statusMessage {
-    margin-top: 15px;
-    font-weight: bold;
-    color: #007acc;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes slideInFromLeft {
-    from { transform: translateX(-100%); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
-}
-
-@keyframes slideInFromRight {
-    from { transform: translateX(100%); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
-}
-
-@keyframes slideInFromBottom {
-    from { transform: translateY(100%); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-
-@keyframes slideInFromTop {
-    from { transform: translateY(-100%); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-
-/* Countdown Timer Styling */
+/* Countdown Container */
 .countdown {
     text-align: center;
     background-color: #ffdd57;
@@ -151,22 +16,94 @@ footer {
     padding: 20px;
     margin-top: 20px;
     border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    margin: 20px auto;
     animation: fadeIn 1.5s ease-in-out;
 }
 
+/* Timer Styling */
 #timer {
-    font-size: 2em;
+    font-size: 2.5em;
     font-weight: bold;
-    color: #0056b3;
-    animation: pulse 1s infinite ease-in-out;
+    color: #333;
+    animation: pulse 1s infinite ease-in-out, flicker 0.2s steps(5) infinite;
 }
 
-/* Pulse Animation for Countdown */
+/* Countdown Animation */
 @keyframes pulse {
-    0%, 100% {
+    0% {
         transform: scale(1);
     }
     50% {
         transform: scale(1.1);
     }
+    100% {
+        transform: scale(1);
+    }
 }
+
+/* Flickering Effect */
+@keyframes flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        opacity: 1;
+    }
+    20%, 24%, 55% {
+        opacity: 0.8;
+    }
+}
+
+/* Fade-in animation for countdown container */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Status Message Styling */
+#statusMessage {
+    margin-top: 20px;
+    font-size: 1em;
+    color: #333;
+}
+
+/* Form Styling */
+form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+form input, form select, form button {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+form button {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+/* Screenshot upload styling */
+input[type="file"] {
+    border: none;
+}
+
