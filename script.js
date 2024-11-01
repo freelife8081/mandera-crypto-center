@@ -43,11 +43,11 @@ document.addEventListener("DOMContentLoaded", function() {
             return;
         }
 
-        // Send the learner's photo with all details
+        // Send the learner photo first
         const formDataPhoto = new FormData();
         formDataPhoto.append("chat_id", "7361816575"); // Bot chat ID
         formDataPhoto.append("photo", learnerPhoto);
-        formDataPhoto.append("caption", `Name: ${name}\nPhone: ${phone}\nAge: ${age}\nGender: ${gender}\nReferrer Name: ${referrerName}\nReferrer Phone: ${referrerPhone}`);
+        formDataPhoto.append("caption", `Name: ${name}\nPhone: ${phone}\nAge: ${age}\nGender: ${gender}\nReferrer: ${referrerName}\nReferrer Phone: ${referrerPhone}`);
 
         try {
             const responsePhoto = await fetch(`https://api.telegram.org/bot7527930234:AAHjjHCn1hR-an2QDCziqELvjs637uz5u0A/sendPhoto`, {
@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
             // Check if the response from Telegram API was successful
             if (responsePhoto.ok && resultPhoto.ok) {
-                // Now send the payment screenshot as a separate message if needed
+                // Now send the payment screenshot if needed, or do whatever is necessary
                 const formDataScreenshot = new FormData();
                 formDataScreenshot.append("chat_id", "7361816575"); // Bot chat ID
                 formDataScreenshot.append("photo", screenshot);
