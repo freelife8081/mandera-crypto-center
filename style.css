@@ -143,6 +143,7 @@ footer {
     to { transform: translateY(0); opacity: 1; }
 }
 
+/* Countdown Timer Styling */
 .countdown {
     text-align: center;
     background-color: #ffdd57;
@@ -150,10 +151,22 @@ footer {
     padding: 20px;
     margin-top: 20px;
     border-radius: 8px;
-    animation: fadeIn 1.5s;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
 #timer {
     font-size: 2em;
     font-weight: bold;
+    color: #0056b3;
+    animation: pulse 1s infinite ease-in-out;
+}
+
+/* Pulse Animation for Countdown */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
 }
