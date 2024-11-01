@@ -1,0 +1,29 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    background: #007acc;
+    color: #fff;
+    padding: 20px;
+}
+
+.lessons {
+    margin-top: 20px;
+}
+
+#lessonList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#lessonList li {
+    background: #ffdd57;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
