@@ -3,7 +3,13 @@ document.addEventListener("DOMContentLoaded", function() {
     function getNextMondayAtTime(hour, minute) {
         const now = new Date();
         const dayOfWeek = now.getDay(); // 0 = Sunday, 1 = Monday, etc.
-        const daysUntilMonday = (8 - dayOfWeek) % 7 || 7; // Days until next Monday
+        let daysUntilMonday = (1 - dayOfWeek + 7) % 7; // Days until next Monday
+
+        // If today is Monday and time has passed 10:30, count for the following Monday
+        if (dayOfWeek === 1 && (now.getHours() > hour || (now.getHours() === hour && now.getMinutes() >= minute))) {
+            daysUntilMonday += 7;
+        }
+
         const nextMonday = new Date(now);
         nextMonday.setDate(now.getDate() + daysUntilMonday);
         nextMonday.setHours(hour, minute, 0, 0); // Set to the desired hour and minute
