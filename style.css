@@ -157,3 +157,14 @@ footer {
     font-size: 2em;
     font-weight: bold;
 }
+.lesson{
+    margin-top: 20px;
+    display: inline-block;
+    background: #ffdd57;
+    color: green;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.2s;
+}
