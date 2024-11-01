@@ -1,77 +1,39 @@
-/* Basic reset for consistent styling */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
     font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
 }
 
-.container {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-h1, h2 {
-    color: #333;
+header {
     text-align: center;
-    margin-bottom: 10px;
+    padding: 20px;
+    background-color: #007acc;
+    color: white;
 }
 
-h1 {
-    font-size: 2em;
+#lesson-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.lesson {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #f9f9f9;
+}
+
+.lesson h2 {
     color: #007acc;
 }
 
-.lesson-item {
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+.lesson a {
+    display: inline-block;
     margin-top: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    color: #007acc;
+    text-decoration: none;
 }
 
-.lesson-item h3 {
-    font-size: 1.1em;
-}
-
-.progress-bar {
-    width: 100%;
-    background-color: #e0e0e0;
-    border-radius: 5px;
-    height: 10px;
-    overflow: hidden;
-    margin-top: 5px;
-}
-
-.progress {
-    height: 100%;
-    background-color: #007acc;
-    width: 0;
-    border-radius: 5px;
-    transition: width 0.3s;
-}
-
-button {
-    padding: 10px 15px;
-    background-color: #007acc;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #005f99;
+.lesson a:hover {
+    text-decoration: underline;
 }
