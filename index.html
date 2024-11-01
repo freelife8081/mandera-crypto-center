@@ -15,6 +15,12 @@
         <a href="lessons.html" class="lesson">Access lessons here.</a>
     </header>
 
+    <!-- Countdown Timer Section -->
+    <section class="timer-section">
+        <h2>Countdown to Course Start</h2>
+        <p id="timer">Loading...</p> <!-- This is where the timer will display -->
+    </section>
+
     <section class="intro">
         <h2>About Us</h2>
         <p class="intro-text">At Mandera Crypto Center, we provide comprehensive cryptocurrency education to empower our students with knowledge and skills to thrive in the digital finance world. From beginners to advanced learners, we cover everything you need to succeed!</p>
@@ -31,43 +37,43 @@
     </section>
 
     <section class="registration">
-    <h2>Registration</h2>
-    <p>Pay <span style="color: white; background-color: red;">2000</span> KES via M-Pesa to the number <strong>0721264385</strong> and upload the screenshot of your payment message as proof.</p>
-    
-    <form id="registrationForm">
-        <label for="name">Full Name:</label>
-        <input type="text" id="name" name="name" required>
-
-        <label for="phone">Phone Number:</label>
-        <input type="tel" id="phone" name="phone" required>
-
-        <label for="age">Age:</label>
-        <input type="number" id="age" name="age" min="10" required>
-
-        <label for="gender">Gender:</label>
-        <select id="gender" name="gender" required>
-            <option value="">Select</option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-        </select>
-
-        <label for="referrerName">Who reffered you to our program?</label>
-        <input type="text" id="referrerName" name="referrerName" required>
-
-        <label for="referrerPhone">Enter their phone number:</label>
-        <input type="tel" id="referrerPhone" name="referrerPhone" required>
-
-        <label for="learnerPhoto">Upload Your Photo:</label>
-        <input type="file" id="learnerPhoto" name="learnerPhoto" accept="image/*" required>
+        <h2>Registration</h2>
+        <p>Pay <span style="color: white; background-color: red;">2000</span> KES via M-Pesa to the number <strong>0721264385</strong> and upload the screenshot of your payment message as proof.</p>
         
-        <label for="screenshot">Upload Payment Screenshot:</label>
-        <input type="file" id="screenshot" name="screenshot" accept="image/*" required>
+        <form id="registrationForm">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" min="10" required>
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="">Select</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+
+            <label for="referrerName">Who referred you to our program?</label>
+            <input type="text" id="referrerName" name="referrerName" required>
+
+            <label for="referrerPhone">Enter their phone number:</label>
+            <input type="tel" id="referrerPhone" name="referrerPhone" required>
+
+            <label for="learnerPhoto">Upload Your Photo:</label>
+            <input type="file" id="learnerPhoto" name="learnerPhoto" accept="image/*" required>
+            
+            <label for="screenshot">Upload Payment Screenshot:</label>
+            <input type="file" id="screenshot" name="screenshot" accept="image/*" required>
+            
+            <button type="submit">Register</button>
+        </form>
         
-        <button type="submit">Register</button>
-    </form>
-    
-    <p id="statusMessage"></p>
-</section>
+        <p id="statusMessage"></p>
+    </section>
 
     <footer>
         <p>Mandera Crypto Center © 2024. All Rights Reserved.</p>
