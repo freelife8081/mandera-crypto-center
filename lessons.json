@@ -1,0 +1,15 @@
+{
+    "lessons": [
+        {
+            "title": "Introduction to Cryptocurrency",
+            "description": "Learn the basics of cryptocurrency, its history, and its significance.",
+            "link": "https://your-link-to-lesson.com"
+        },
+        {
+            "title": "Blockchain Technology",
+            "description": "Understand the technology behind cryptocurrencies and how it works.",
+            "link": "https://your-link-to-lesson.com"
+        }
+        // Add more lessons here as needed
+    ]
+}
