@@ -3,91 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lesson Progress Tracker</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        h1 {
-            text-align: center;
-        }
-        .lesson-item {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
-        }
-        .progress-container {
-            width: 100%;
-            background-color: #ddd;
-            height: 20px;
-            margin: 20px 0;
-        }
-        .progress-fill {
-            height: 100%;
-            background-color: #4caf50;
-            width: 0;
-            transition: width 0.5s;
-        }
-        #progressText {
-            text-align: center;
-            font-weight: bold;
-        }
-    </style>
+    <title>Lessons</title>
+    <link rel="stylesheet" href="lessons.css">
 </head>
 <body>
-    <h1>Lessons</h1>
-    <div id="lessonList"></div>
-    
-    <div class="progress-container">
-        <div id="progressFill" class="progress-fill"></div>
+    <div class="container">
+        <h1>Course Lessons</h1>
+        <div id="lessonList">
+            <!-- JavaScript will populate this section with lessons -->
+        </div>
     </div>
-    <p id="progressText">Progress: 0%</p>
 
-    <script>
-        // Load lessons from lessons.json and render them on the page
-        fetch("lessons.json")
-            .then(response => response.json())
-            .then(lessons => {
-                const lessonList = document.getElementById("lessonList");
-
-                lessons.forEach(lesson => {
-                    const lessonItem = document.createElement("div");
-                    lessonItem.classList.add("lesson-item");
-
-                    lessonItem.innerHTML = `
-                        <input type="checkbox" id="lesson${lesson.id}" ${localStorage.getItem(`lesson${lesson.id}`) ? "checked" : ""} />
-                        <label for="lesson${lesson.id}">${lesson.title}</label>
-                        <a href="${lesson.url}" target="_blank">Open Lesson</a>
-                    `;
-
-                    lessonList.appendChild(lessonItem);
-
-                    // Event listener to update progress on checkbox change
-                    document.getElementById(`lesson${lesson.id}`).addEventListener("change", (event) => {
-                        if (event.target.checked) {
-                            localStorage.setItem(`lesson${lesson.id}`, "completed");
-                        } else {
-                            localStorage.removeItem(`lesson${lesson.id}`);
-                        }
-                        updateProgress(lessons.length);
-                    });
-                });
-
-                // Initial progress calculation
-                updateProgress(lessons.length);
-            });
-
-        // Calculate and update progress bar and text
-        function updateProgress(totalLessons) {
-            const completedLessons = Array.from({ length: totalLessons }, (_, i) => `lesson${i + 1}`)
-                .filter(id => localStorage.getItem(id)).length;
-
-            const progressPercent = Math.round((completedLessons / totalLessons) * 100);
-            document.getElementById("progressFill").style.width = `${progressPercent}%`;
-            document.getElementById("progressText").textContent = `Progress: ${progressPercent}%`;
-        }
-    </script>
+    <script src="loadLessons.js"></script>
 </body>
 </html>
