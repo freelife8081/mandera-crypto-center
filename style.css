@@ -68,11 +68,53 @@ section {
     animation: slideInFromBottom 1.5s;
 }
 
+.registration {
+    background-color: #f0f0f0;
+    color: #333;
+    animation: slideInFromTop 1.5s;
+    padding-top: 20px;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input[type="text"], input[type="tel"], input[type="number"], select, input[type="file"] {
+    width: 90%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #007acc;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #005f99;
+}
+
 footer {
     text-align: center;
     padding: 20px;
     background-color: #333;
     color: #fff;
+}
+
+#statusMessage {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #007acc;
 }
 
 /* Animations */
@@ -93,5 +135,10 @@ footer {
 
 @keyframes slideInFromBottom {
     from { transform: translateY(100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideInFromTop {
+    from { transform: translateY(-100%); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
 }
