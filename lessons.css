@@ -1,46 +1,58 @@
+/* General body styling */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
     color: #333;
 }
 
-.container {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
+/* Header styling */
+header {
+    background: #007BFF; /* Blue background */
+    color: #fff; /* White text */
+    padding: 20px 0;
     text-align: center;
-    color: #007acc;
 }
 
-.lesson-item {
-    padding: 15px;
-    border: 1px solid #ddd;
+/* Section styling */
+section {
+    margin: 20px;
+    padding: 20px;
+    background: #fff; /* White background for sections */
     border-radius: 5px;
-    margin-top: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.lesson-title {
-    font-size: 1.2em;
-    color: #007acc;
+/* H2 styling */
+h2 {
+    color: #007BFF; /* Blue color for headings */
+    margin-bottom: 10px;
+}
+
+/* Paragraph styling */
+p {
+    margin-bottom: 15px;
+}
+
+/* Link styling */
+a {
+    color: #007BFF;
     text-decoration: none;
 }
 
-.progress-bar {
-    width: 100%;
-    background-color: #e0e0e0;
-    border-radius: 5px;
-    height: 10px;
-    margin-top: 5px;
+a:hover {
+    text-decoration: underline; /* Underline links on hover */
 }
 
-.progress {
-    height: 100%;
-    background-color: #007acc;
-    border-radius: 5px;
+/* Footer styling */
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #007BFF; /* Blue background */
+    color: #fff; /* White text */
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
