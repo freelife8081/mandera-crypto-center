@@ -69,6 +69,7 @@ section {
 }
 
 .registration {
+    display: none;
     background-color: #fff;
     color: #333;
     animation: slideInFromTop 1.5s;
