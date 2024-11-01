@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Fetch lessons from lessons.json
     fetch('lessons.json')
         .then(response => {
             if (!response.ok) {
@@ -14,10 +13,14 @@ document.addEventListener("DOMContentLoaded", function() {
                 const lessonDiv = document.createElement("div");
                 lessonDiv.className = "lesson";
 
-                // Add lesson title and description
+                // Add lesson title, description, and progress
                 lessonDiv.innerHTML = `
                     <h2>${lesson.title}</h2>
                     <p>${lesson.description}</p>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" style="width: ${lesson.progress}%;"></div>
+                    </div>
+                    <p>${lesson.progress}% complete</p>
                     <a href="${lesson.link}" target="_blank">Read More</a>
                 `;
                 
