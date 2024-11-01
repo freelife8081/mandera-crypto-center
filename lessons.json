@@ -1,5 +1,17 @@
 [
-    { "id": 1, "title": "Introduction to Cryptocurrency", "url": "introduction.html" },
-    { "id": 2, "title": "Understanding Blockchain", "url": "blockchain.html" },
-    { "id": 3, "title": "Cryptocurrency Wallets", "url": "cryptowallets.html" }
+    {
+        "title": "Introduction to Cryptocurrency",
+        "link": "introduction.html",
+        "progress": 100
+    },
+    {
+        "title": "Understanding Blockchain",
+        "link": "blockchain.html",
+        "progress": 50
+    },
+    {
+        "title": "Crypto Wallets",
+        "link": "wallets.html",
+        "progress": 30
+    }
 ]
