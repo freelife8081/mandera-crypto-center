@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Countdown timer setup
-    const targetDate = new Date("January 1, 2025 00:00:00").getTime();
+    // Set the target date for 3 days from now
+    const targetDate = new Date();
+    targetDate.setDate(targetDate.getDate() + 3); // Add 3 days
 
     function updateCountdown() {
         const now = new Date().getTime();
@@ -9,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // Calculate days, hours, minutes, and seconds
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
         const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60)) / (1000 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
         // Display the result in the timer element
