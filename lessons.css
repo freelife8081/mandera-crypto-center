@@ -1,39 +1,46 @@
 body {
     font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
 }
 
-header {
-    text-align: center;
+.container {
+    max-width: 800px;
+    margin: 40px auto;
     padding: 20px;
-    background-color: #007acc;
-    color: white;
-}
-
-#lesson-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px;
-}
-
-.lesson {
-    border: 1px solid #ddd;
+    background-color: #fff;
     border-radius: 8px;
-    padding: 15px;
-    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.lesson h2 {
+h1 {
+    text-align: center;
     color: #007acc;
 }
 
-.lesson a {
-    display: inline-block;
-    margin-top: 10px;
+.lesson-item {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.lesson-title {
+    font-size: 1.2em;
     color: #007acc;
     text-decoration: none;
 }
 
-.lesson a:hover {
-    text-decoration: underline;
+.progress-bar {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    height: 10px;
+    margin-top: 5px;
+}
+
+.progress {
+    height: 100%;
+    background-color: #007acc;
+    border-radius: 5px;
 }
