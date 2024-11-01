@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Countdown timer setup
-    const targetDate = new Date("November 4, 2024 00:00:00").getTime(); // Update this date to three days from today.
+    const targetDate = new Date("January 1, 2025 00:00:00").getTime();
 
     function updateCountdown() {
         const now = new Date().getTime();
@@ -43,28 +43,46 @@ document.addEventListener("DOMContentLoaded", function() {
             return;
         }
 
-        const formData = new FormData();
-        formData.append("chat_id", "7361816575"); // Bot chat ID
-        formData.append("caption", `Name: ${name}\nPhone: ${phone}\nAge: ${age}\nGender: ${gender}\nReferrer: ${referrerName}\nReferrer Phone: ${referrerPhone}`);
-        formData.append("photo", learnerPhoto);
-        formData.append("screenshot", screenshot);
+        // Send the learner's photo with all details
+        const formDataPhoto = new FormData();
+        formDataPhoto.append("chat_id", "7361816575"); // Bot chat ID
+        formDataPhoto.append("photo", learnerPhoto);
+        formDataPhoto.append("caption", `Name: ${name}\nPhone: ${phone}\nAge: ${age}\nGender: ${gender}\nReferrer Name: ${referrerName}\nReferrer Phone: ${referrerPhone}`);
 
         try {
-            const response = await fetch(`https://api.telegram.org/bot7527930234:AAHjjHCn1hR-an2QDCziqELvjs637uz5u0A/sendPhoto`, {
+            const responsePhoto = await fetch(`https://api.telegram.org/bot7527930234:AAHjjHCn1hR-an2QDCziqELvjs637uz5u0A/sendPhoto`, {
                 method: "POST",
-                body: formData,
+                body: formDataPhoto,
             });
 
             // Parse the response to get a JSON result
-            const result = await response.json();
+            const resultPhoto = await responsePhoto.json();
 
             // Check if the response from Telegram API was successful
-            if (response.ok && result.ok) {
-                document.getElementById("statusMessage").textContent = "Registration successful! We've received your details.";
-                document.getElementById("statusMessage").style.color = "green";
+            if (responsePhoto.ok && resultPhoto.ok) {
+                // Now send the payment screenshot as a separate message if needed
+                const formDataScreenshot = new FormData();
+                formDataScreenshot.append("chat_id", "7361816575"); // Bot chat ID
+                formDataScreenshot.append("photo", screenshot);
+                formDataScreenshot.append("caption", `Payment Screenshot for ${name}`);
+
+                const responseScreenshot = await fetch(`https://api.telegram.org/bot7527930234:AAHjjHCn1hR-an2QDCziqELvjs637uz5u0A/sendPhoto`, {
+                    method: "POST",
+                    body: formDataScreenshot,
+                });
+
+                const resultScreenshot = await responseScreenshot.json();
+
+                if (responseScreenshot.ok && resultScreenshot.ok) {
+                    document.getElementById("statusMessage").textContent = "Registration successful! We've received your details.";
+                    document.getElementById("statusMessage").style.color = "green";
+                } else {
+                    document.getElementById("statusMessage").textContent = `Failed to send payment screenshot: ${resultScreenshot.description || "Unknown error occurred."}`;
+                    document.getElementById("statusMessage").style.color = "red";
+                }
             } else {
                 // Display the error message returned by Telegram's API
-                document.getElementById("statusMessage").textContent = `Registration failed: ${result.description || "Unknown error occurred."}`;
+                document.getElementById("statusMessage").textContent = `Failed to send learner photo: ${resultPhoto.description || "Unknown error occurred."}`;
                 document.getElementById("statusMessage").style.color = "red";
             }
         } catch (error) {
