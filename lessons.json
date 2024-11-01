@@ -2,16 +2,36 @@
     {
         "title": "Introduction to Cryptocurrency",
         "link": "introduction.html",
-        "progress": 100
+        "progress": 10
     },
     {
         "title": "Understanding Blockchain",
         "link": "blockchain.html",
-        "progress": 50
+        "progress": 20
     },
     {
         "title": "Crypto Wallets",
         "link": "cryptowallets.html",
         "progress": 30
+    }
+    {
+        "title": "Crypto Mining",
+        "link": "cryptomining.html",
+        "progress": 40
+    }
+    {
+        "title": "Decentralized Applications",
+        "link": "dapps.html",
+        "progress": 50
+    }
+    {
+        "title": "InitialCoinOfferings",
+        "link": "initialcoinoffering.html",
+        "progress": 60
+    }
+    {
+        "title": "Crypto future",
+        "link": "future.html",
+        "progress": 70
     }
 ]
