@@ -41,3 +41,29 @@ document.getElementById("registrationForm").addEventListener("submit", async fun
         document.getElementById("statusMessage").style.color = "red";
     }
 });
+
+// Countdown timer setup
+const targetDate = new Date("January 1, 2025 00:00:00").getTime();
+
+function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+
+    // Calculate days, hours, minutes, and seconds
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Display the result
+    document.getElementById("timer").textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+    // If the countdown is over, display a message
+    if (distance < 0) {
+        clearInterval(countdownInterval);
+        document.getElementById("timer").textContent = "Class has started!";
+    }
+}
+
+// Update the countdown every 1 second
+const countdownInterval = setInterval(updateCountdown, 1000);
