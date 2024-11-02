@@ -1,7 +1,7 @@
 // Function to fetch and display course content
 async function fetchCourseContent() {
     try {
-        const response = await fetch('path/to/course_content.json'); // Ensure this path is correct
+        const response = await fetch('lessons.json'); // Ensure this path is correct
         const data = await response.json();
         
         // Display the course title
