@@ -3,18 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cryptocurrency Course</title>
-    <link rel="stylesheet" href="lessons.css"> <!-- Link to your CSS file -->
+    <title>Cryptocurrency Lessons</title>
+    <link rel="stylesheet" href="lessons.css">
 </head>
 <body>
-    <h1 id="courseTitle"></h1>
-    <div>
-        <label for="weekSelect">Select Week:</label>
+    <div id="container">
+        <h1 id="courseTitle"></h1>
         <select id="weekSelect"></select>
+        <div id="content"></div>
     </div>
-    <div id="content"></div>
-
-    <!-- Link to JavaScript file for loading lessons -->
     <script src="loadLessons.js"></script>
 </body>
 </html>
