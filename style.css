@@ -168,3 +168,24 @@ footer {
     font-weight: bold;
     transition: transform 1s;
 }
+
+.discount {
+    background-color: #ffebcd; /* Light beige background */
+    border: 2px solid #ff4500; /* Orange-red border */
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px; /* Rounded corners */
+    text-align: center; /* Center the text */
+}
+
+.discount h2 {
+    color: #d2691e; /* Chocolate color for the header */
+}
+
+.discount p {
+    font-size: 1.2em; /* Slightly larger font size for emphasis */
+}
+
+.discount strong {
+    color: #ff4500; /* Highlight strong text in orange-red */
+}
