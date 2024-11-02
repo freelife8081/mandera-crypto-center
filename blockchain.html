@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding Blockchain</title>
+    <link rel="stylesheet" href="lessons.css">
+</head>
+<body>
+    <div id="container">
+        <h1>Understanding Blockchain</h1>
+        <p>
+            Blockchain is a distributed ledger technology that enables the secure and transparent recording of transactions across multiple computers. Each transaction is grouped together in a block, and these blocks are linked together in chronological order to form a chain. This structure ensures the integrity and security of the data recorded on the blockchain.
+        </p>
+        
+        <h2>Key Characteristics of Blockchain</h2>
+        <ol>
+            <li>
+                <strong>Decentralization:</strong> Unlike traditional databases that are controlled by a central authority, a blockchain is maintained by a network of nodes (computers) that collectively verify and validate transactions. This decentralization reduces the risk of fraud and increases the system's resilience.
+            </li>
+            <li>
+                <strong>Transparency:</strong> Every participant in the network has access to the entire blockchain, making it easy to verify transactions and trace the history of assets. This transparency helps build trust among users.
+            </li>
+            <li>
+                <strong>Immutability:</strong> Once a block is added to the blockchain, it cannot be altered or deleted without the consensus of the network. This immutability is achieved through cryptographic hashing, which links each block to the previous one.
+            </li>
+            <li>
+                <strong>Security:</strong> Transactions on the blockchain are secured through cryptographic techniques, making it extremely difficult for unauthorized parties to alter or forge records. Each transaction is encrypted and time-stamped, providing an additional layer of security.
+            </li>
+        </ol>
+
+        <h2>How Does Blockchain Work?</h2>
+        <ol>
+            <li>
+                <strong>Transaction Initiation:</strong> A user initiates a transaction, which could involve the transfer of digital assets or data.
+            </li>
+            <li>
+                <strong>Broadcasting the Transaction:</strong> The transaction is broadcasted to the network of nodes for verification. Each node receives the transaction and performs necessary checks to ensure its validity.
+            </li>
+            <li>
+                <strong>Validation:</strong> Nodes validate the transaction through consensus mechanisms, such as Proof of Work (PoW) or Proof of Stake (PoS). Once validated, the transaction is added to a new block.
+            </li>
+            <li>
+                <strong>Block Addition:</strong> The validated block is then added to the existing blockchain, becoming part of the permanent ledger.
+            </li>
+            <li>
+                <strong>Completion:</strong> The transaction is complete, and the updated blockchain is reflected across all nodes in the network.
+            </li>
+        </ol>
+
+        <button onclick="goBack()">Go Back</button>
+    </div>
+    <script src="lessons.js"></script>
+</body>
+</html>
