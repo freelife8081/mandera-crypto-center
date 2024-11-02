@@ -106,3 +106,18 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
+// Function to show the modal
+function showModal() {
+    document.getElementById("discountModal").style.display = "block";
+}
+
+// Function to close the modal
+function closeModal() {
+    document.getElementById("discountModal").style.display = "none";
+}
+
+// Show the modal when the page loads
+window.onload = function() {
+    showModal();
+};
