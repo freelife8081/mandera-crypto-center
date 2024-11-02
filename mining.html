@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cryptocurrency Mining</title>
+    <link rel="stylesheet" href="lessons.css">
+</head>
+<body>
+    <div id="container">
+        <h1>Cryptocurrency Mining</h1>
+        <p>
+            Cryptocurrency mining is the process by which new coins are created and transactions are verified and added to the blockchain. Miners use powerful computers to solve complex mathematical problems, which helps secure the network and validate transactions. In return for their efforts, miners are rewarded with newly minted coins and transaction fees.
+        </p>
+
+        <h2>How Cryptocurrency Mining Works</h2>
+        <ol>
+            <li>
+                <strong>Transaction Verification:</strong>
+                <p>When a user initiates a transaction, it is broadcast to the network. Miners collect these transactions and verify their authenticity by checking that the sender has sufficient balance.</p>
+            </li>
+            <li>
+                <strong>Block Creation:</strong>
+                <p>Once a set of transactions is verified, they are grouped into a block. This block contains a reference to the previous block, forming a chain of blocks known as the blockchain.</p>
+            </li>
+            <li>
+                <strong>Solving the Mathematical Problem:</strong>
+                <p>To add the block to the blockchain, miners must solve a complex mathematical puzzle. This process requires significant computational power and energy.</p>
+            </li>
+            <li>
+                <strong>Consensus Mechanism:</strong>
+                <p>Different cryptocurrencies use various consensus mechanisms to validate blocks. The most common ones include:</p>
+                <ul>
+                    <li><strong>Proof of Work (PoW):</strong> Miners compete to solve puzzles, and the first to solve it gets to add the block and receive a reward.</li>
+                    <li><strong>Proof of Stake (PoS):</strong> Validators are chosen to create new blocks based on the number of coins they hold and are willing to "stake" as collateral.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Block Confirmation:</strong>
+                <p>Once a block is successfully mined and added to the blockchain, it is confirmed by other nodes in the network, and the transactions within the block are considered complete.</p>
+            </li>
+        </ol>
+
+        <h2>Types of Mining</h2>
+        <ul>
+            <li>
+                <strong>Solo Mining:</strong>
+                <p>Miners work independently to mine coins. While they keep all the rewards, the chances of successfully mining a block are lower due to increased competition.</p>
+            </li>
+            <li>
+                <strong>Pool Mining:</strong>
+                <p>Miners join forces in a pool to combine their computational power. When a block is successfully mined, the rewards are shared among all participants based on their contributed processing power.</p>
+            </li>
+            <li>
+                <strong>Cloud Mining:</strong>
+                <p>Users rent mining power from a cloud service provider instead of owning hardware. This method can reduce upfront costs but may come with risks regarding the provider's legitimacy.</p>
+            </li>
+        </ul>
+
+        <h2>Mining Rewards and Incentives</h2>
+        <p>
+            Miners are incentivized to maintain the network's integrity through rewards, which include:
+        </p>
+        <ul>
+            <li><strong>Block Rewards:</strong> A fixed amount of cryptocurrency is awarded for successfully mining a block. For example, Bitcoin's reward decreases over time through a process called halving.</li>
+            <li><strong>Transaction Fees:</strong> Miners receive fees for processing transactions included in the block, providing an additional income stream.</li>
+        </ul>
+
+        <h2>Challenges of Cryptocurrency Mining</h2>
+        <ul>
+            <li><strong>High Energy Consumption:</strong> Mining requires significant energy resources, raising environmental concerns.</li>
+            <li><strong>Increased Difficulty:</strong> As more miners join the network, the difficulty of solving puzzles increases, requiring more advanced hardware.</li>
+            <li><strong>Market Volatility:</strong> The profitability of mining is affected by the cryptocurrency market's fluctuating prices and the cost of electricity.</li>
+        </ul>
+
+        <button onclick="goBack()">Go Back</button>
+    </div>
+    <script src="lessons.js"></script>
+</body>
+</html>
