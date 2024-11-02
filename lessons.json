@@ -30,7 +30,17 @@
           ]
         }
       ]
+    },
+    {
+      "week": 2,
+      "topic": "Understanding Blockchain",
+      "sections": [
+        {
+          "title": "What is a Blockchain?",
+          "content": "A blockchain is a chain of blocks, each containing data and linked together cryptographically."
+        }
+      ]
     }
-    // Additional weeks can be added here
+    
   ]
 }
