@@ -1,37 +1,128 @@
-[
-    {
-        "title": "Introduction to Cryptocurrency",
-        "link": "introduction.html",
-        "progress": 10
-    },
-    {
-        "title": "Understanding Blockchain",
-        "link": "blockchain.html",
-        "progress": 20
-    },
-    {
-        "title": "Crypto Wallets",
-        "link": "cryptowallets.html",
-        "progress": 30
-    }
-    {
-        "title": "Crypto Mining",
-        "link": "cryptomining.html",
-        "progress": 40
-    }
-    {
-        "title": "Decentralized Applications",
-        "link": "dapps.html",
-        "progress": 50
-    }
-    {
-        "title": "InitialCoinOfferings",
-        "link": "initialcoinoffering.html",
-        "progress": 60
-    }
-    {
-        "title": "Crypto future",
-        "link": "future.html",
-        "progress": 70
-    }
-]
+{
+    "courseTitle": "Cryptocurrency for Beginners",
+    "weeks": [
+        {
+            "week": 1,
+            "topic": "Introduction to Cryptocurrency",
+            "sections": [
+                {
+                    "title": "What is Cryptocurrency?",
+                    "content": "Cryptocurrency is a digital or virtual form of currency that uses cryptography for security..."
+                },
+                {
+                    "title": "History and Evolution of Cryptocurrency",
+                    "content": "The idea of cryptocurrency did not start with Bitcoin. In fact, digital currency concepts date back to the 1980s..."
+                },
+                {
+                    "title": "Key Terminologies",
+                    "subsections": [
+                        {
+                            "title": "Blockchain",
+                            "content": "Blockchain is a shared, immutable ledger that records transactions in a secure and transparent way..."
+                        },
+                        {
+                            "title": "Wallet",
+                            "content": "A cryptocurrency wallet is a digital tool that allows users to store, send, and receive cryptocurrency..."
+                        },
+                        {
+                            "title": "Mining",
+                            "content": "Mining is the process by which new cryptocurrency coins are created and transactions are validated on a blockchain..."
+                        }
+                    ]
+                },
+                {
+                    "title": "Different Types of Cryptocurrencies",
+                    "content": "There are thousands of cryptocurrencies in existence today, each serving unique purposes.",
+                    "list": [
+                        {
+                            "name": "Bitcoin (BTC)",
+                            "description": "The first cryptocurrency, often considered digital gold due to its scarcity and value."
+                        },
+                        {
+                            "name": "Ethereum (ETH)",
+                            "description": "Known for its smart contract functionality..."
+                        }
+                    ]
+                },
+                {
+                    "title": "How Cryptocurrency Works",
+                    "content": "Cryptocurrencies operate on decentralized networks that rely on blockchain technology..."
+                }
+            ]
+        },
+        {
+            "week": 2,
+            "topic": "Blockchain Technology",
+            "sections": [
+                {
+                    "title": "Basics of Blockchain",
+                    "content": "Blockchain is a decentralized ledger that records transactions securely..."
+                },
+                {
+                    "title": "How Blockchain Works",
+                    "content": "In a blockchain, each transaction is recorded as a block..."
+                }
+            ]
+        },
+        {
+            "week": 3,
+            "topic": "Understanding Bitcoin",
+            "sections": [
+                {
+                    "title": "Origin and Purpose of Bitcoin",
+                    "content": "Bitcoin was created in 2009 by an anonymous person or group known as Satoshi Nakamoto..."
+                }
+            ]
+        },
+        {
+            "week": 4,
+            "topic": "Altcoins and Token Types",
+            "sections": [
+                {
+                    "title": "What are Altcoins?",
+                    "content": "Altcoins refer to cryptocurrencies other than Bitcoin, each with its own purpose and features..."
+                }
+            ]
+        },
+        {
+            "week": 5,
+            "topic": "Cryptocurrency Wallets and Security",
+            "sections": [
+                {
+                    "title": "Types of Wallets",
+                    "content": "Cryptocurrency wallets are categorized into hot and cold wallets..."
+                }
+            ]
+        },
+        {
+            "week": 6,
+            "topic": "Buying, Selling, and Trading Cryptocurrency",
+            "sections": [
+                {
+                    "title": "Cryptocurrency Exchanges",
+                    "content": "Exchanges are platforms where users can buy and sell cryptocurrencies..."
+                }
+            ]
+        },
+        {
+            "week": 7,
+            "topic": "Cryptocurrency Regulations and Taxation",
+            "sections": [
+                {
+                    "title": "Global Perspectives",
+                    "content": "Cryptocurrency regulations vary widely by country..."
+                }
+            ]
+        },
+        {
+            "week": 8,
+            "topic": "Future of Cryptocurrency and Blockchain Technology",
+            "sections": [
+                {
+                    "title": "Emerging Trends",
+                    "content": "Decentralized Finance (DeFi), NFTs, and Web3 are transforming the crypto space..."
+                }
+            ]
+        }
+    ]
+}
