@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lessons</title>
     <link rel="stylesheet" href="lessons.css">
+    <title>Cryptocurrency Course</title>
 </head>
 <body>
-    <div class="lessons-container">
-        <h1>Course Lessons</h1>
-        <div id="lessonList">
-            <!-- Lessons will be dynamically added here by JavaScript -->
-        </div>
+    <h1 id="courseTitle"></h1>
+    <div>
+        <label for="weekSelect">Select Week:</label>
+        <select id="weekSelect"></select>
     </div>
+    <div id="content"></div>
 
+    <!-- Link to the external JavaScript file -->
     <script src="loadLessons.js"></script>
 </body>
 </html>
