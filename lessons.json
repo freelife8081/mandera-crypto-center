@@ -1,62 +1,36 @@
 {
-    "courseTitle": "Cryptocurrency for Beginners",
-    "weeks": [
+  "courseTitle": "Cryptocurrency Basics",
+  "weeks": [
+    {
+      "week": 1,
+      "topic": "Introduction to Cryptocurrency",
+      "sections": [
         {
-            "week": 1,
-            "topic": "Introduction to Cryptocurrency",
-            "sections": [
-                {
-                    "title": "What is Cryptocurrency?",
-                    "content": "Cryptocurrency is a digital or virtual form of currency that uses cryptography for secure transactions. Unlike traditional currencies issued by governments (like USD or EUR), cryptocurrencies are decentralized and operate on blockchain technology, making them immune to central authorities such as banks. These digital currencies are stored in digital wallets and transferred directly between individuals without intermediaries. The popularity of cryptocurrencies has grown due to their ability to provide secure, fast, and borderless transactions."
-                },
-                {
-                    "title": "History and Evolution of Cryptocurrency",
-                    "content": "The concept of digital currency dates back to the 1980s when early attempts were made to create secure, digital cash. In the early 1990s, computer scientist David Chaum developed DigiCash, a digital currency system that allowed users to make anonymous payments. However, it was not until the introduction of Bitcoin in 2009 by an anonymous person or group known as Satoshi Nakamoto that cryptocurrencies began gaining mainstream attention. Bitcoin introduced a groundbreaking solution to the 'double-spending problem' through blockchain technology, allowing it to become the first successful decentralized digital currency. Since then, thousands of cryptocurrencies have been developed, with each offering unique functionalities."
-                },
-                {
-                    "title": "Key Terminologies",
-                    "subsections": [
-                        {
-                            "title": "Blockchain",
-                            "content": "Blockchain is the underlying technology behind most cryptocurrencies. It is a distributed ledger that records all transactions across a network of computers in a secure, transparent, and immutable manner. Each transaction is grouped into a 'block' and added to a 'chain' of previous transactions, hence the name blockchain. This technology ensures the integrity of data and eliminates the need for a central authority to verify transactions."
-                        },
-                        {
-                            "title": "Wallet",
-                            "content": "A cryptocurrency wallet is a digital tool that stores your cryptocurrency securely. It allows users to send and receive digital assets. Wallets come in different types, including 'hot wallets,' which are connected to the internet, and 'cold wallets,' which are offline and generally more secure. Each wallet has a unique address, a public key for receiving funds, and a private key for spending them. Securing your private key is essential because losing it means losing access to your cryptocurrency."
-                        },
-                        {
-                            "title": "Mining",
-                            "content": "Mining is the process of validating transactions on a blockchain network. In Proof-of-Work (PoW) blockchains, like Bitcoin, miners compete to solve complex mathematical puzzles to add a new block of transactions to the blockchain. Miners who successfully solve these puzzles are rewarded with new cryptocurrency tokens. This process not only secures the network but also controls the supply of new tokens. Alternative consensus mechanisms, such as Proof-of-Stake (PoS), are also used by other cryptocurrencies to validate transactions more energy-efficiently."
-                        }
-                    ]
-                },
-                {
-                    "title": "Different Types of Cryptocurrencies",
-                    "content": "There are thousands of cryptocurrencies available today, each with unique characteristics and functionalities. Some cryptocurrencies are widely used for payments, while others are designed for specific applications like smart contracts or decentralized finance.",
-                    "list": [
-                        {
-                            "name": "Bitcoin (BTC)",
-                            "description": "Bitcoin is the first and most widely recognized cryptocurrency. It is often referred to as 'digital gold' because of its limited supply (21 million coins) and role as a store of value."
-                        },
-                        {
-                            "name": "Ethereum (ETH)",
-                            "description": "Ethereum is known for its smart contract functionality, which enables developers to create decentralized applications (DApps) on its blockchain. It is the second-largest cryptocurrency by market capitalization."
-                        },
-                        {
-                            "name": "Ripple (XRP)",
-                            "description": "Ripple is a digital payment protocol designed for fast and low-cost cross-border transactions. It is popular among banks and financial institutions."
-                        },
-                        {
-                            "name": "Litecoin (LTC)",
-                            "description": "Litecoin was created as an alternative to Bitcoin, offering faster transaction speeds and a different hashing algorithm. It is often considered 'the silver to Bitcoin's gold.'"
-                        }
-                    ]
-                },
-                {
-                    "title": "How Cryptocurrency Works",
-                    "content": "Cryptocurrencies operate on decentralized networks, with transactions verified through a process called consensus. When a transaction is made, it is broadcast to a network of computers (nodes) that verify the transaction's authenticity. In Proof-of-Work (PoW) systems like Bitcoin, miners solve complex puzzles to add the transaction to the blockchain. In Proof-of-Stake (PoS) systems like Ethereum 2.0, validators are chosen based on the amount of cryptocurrency they 'stake' as collateral. Transactions are secured through cryptography, ensuring that once added to the blockchain, they cannot be altered. This decentralized model provides transparency, reduces reliance on central banks, and minimizes fraud."
-                }
-            ]
+          "title": "What is Cryptocurrency?",
+          "content": "Cryptocurrency is a type of digital or virtual currency that uses cryptography for security. It is decentralized and based on blockchain technology.",
+          "subsections": [
+            {
+              "title": "Decentralization",
+              "content": "Decentralization refers to the distribution of authority, control, or power away from a central authority."
+            },
+            {
+              "title": "Blockchain Technology",
+              "content": "Blockchain is a distributed ledger technology that ensures the integrity of data by linking blocks of transactions."
+            }
+          ],
+          "list": [
+            {
+              "name": "Bitcoin",
+              "description": "The first and most well-known cryptocurrency, created in 2009."
+            },
+            {
+              "name": "Ethereum",
+              "description": "A decentralized platform that enables smart contracts and decentralized applications."
+            }
+          ]
         }
-    ]
+      ]
+    }
+    // Additional weeks can be added here
+  ]
 }
