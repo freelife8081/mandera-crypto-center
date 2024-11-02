@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             } else {
                 // Display the error message returned by Telegram's API
-                document.getElementById("statusMessage").textContent = `Failed to send learner photo: ${resultPhoto.description || "Unknown error occurred."}`;
+                document.getElementById("statusMessage").textContent = `Failed to send your photo: ${resultPhoto.description || "Unknown error occurred."}`;
                 document.getElementById("statusMessage").style.color = "red";
             }
         } catch (error) {
@@ -104,20 +104,33 @@ document.addEventListener("DOMContentLoaded", function() {
             document.getElementById("statusMessage").textContent = `An error occurred: ${error.message}`;
             document.getElementById("statusMessage").style.color = "red";
         }
-    });
+    });// Function to show the floating discount box
+function showFloatingBox() {
+    document.getElementById("floatingDiscountBox").style.display = "block";
+}
+
+// Function to close the floating discount box
+function closeFloatingBox() {
+    document.getElementById("floatingDiscountBox").style.display = "none";
+}
+
+// Show the floating box when the page loads
+window.onload = function() {
+    showFloatingBox();
+};
 });
 
-// Function to show the modal
-function showModal() {
-    document.getElementById("discountModal").style.display = "block";
+// Function to show the floating discount box
+function showFloatingBox() {
+    document.getElementById("floatingDiscountBox").style.display = "block";
 }
 
-// Function to close the modal
-function closeModal() {
-    document.getElementById("discountModal").style.display = "none";
+// Function to close the floating discount box
+function closeFloatingBox() {
+    document.getElementById("floatingDiscountBox").style.display = "none";
 }
 
-// Show the modal when the page loads
+// Show the floating box when the page loads
 window.onload = function() {
-    showModal();
+    showFloatingBox();
 };
