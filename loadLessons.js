@@ -1,39 +1,64 @@
-document.addEventListener("DOMContentLoaded", async function() {
-    const lessonList = document.getElementById("lessonList");
-
+// Function to fetch and display course content
+async function fetchCourseContent() {
     try {
-        // Fetch lesson data from the JSON file
-        const response = await fetch("lessons.json");
-        if (!response.ok) throw new Error("Could not load lessons.");
-        const lessons = await response.json();
-
-        // Populate each lesson with a link and progress bar
-        lessons.forEach(lesson => {
-            const lessonDiv = document.createElement("div");
-            lessonDiv.className = "lesson-item";
-
-            // Create a link to the lesson
-            const lessonLink = document.createElement("a");
-            lessonLink.href = lesson.link;
-            lessonLink.textContent = lesson.title;
-            lessonLink.className = "lesson-title";
-            lessonLink.target = "_blank";
-
-            // Progress bar
-            const progressContainer = document.createElement("div");
-            progressContainer.className = "progress-bar";
-            const progressBar = document.createElement("div");
-            progressBar.className = "progress";
-            progressBar.style.width = `${lesson.progress}%`;
-            progressContainer.appendChild(progressBar);
-
-            // Append elements to the lesson item div
-            lessonDiv.appendChild(lessonLink);
-            lessonDiv.appendChild(progressContainer);
-            lessonList.appendChild(lessonDiv);
+        const response = await fetch('path/to/your/course_content.json'); // Update with actual JSON path
+        const data = await response.json();
+        
+        // Display the course title
+        document.getElementById('courseTitle').textContent = data.courseTitle;
+        
+        // Populate the week selector dropdown
+        const weekSelect = document.getElementById('weekSelect');
+        data.weeks.forEach(week => {
+            const option = document.createElement('option');
+            option.value = week.week;
+            option.textContent = `Week ${week.week}: ${week.topic}`;
+            weekSelect.appendChild(option);
         });
+        
+        // Load the content for the selected week
+        weekSelect.addEventListener('change', () => displayContent(data, weekSelect.value));
+        displayContent(data, 1); // Display the first week by default
+        
     } catch (error) {
-        console.error("Error loading lessons:", error);
-        lessonList.textContent = "Failed to load lessons. Please try again later.";
+        console.error("Error fetching course content:", error);
     }
-});
+}
+
+// Function to display the content for a specific week
+function displayContent(data, weekNumber) {
+    const contentDiv = document.getElementById('content');
+    contentDiv.innerHTML = ""; // Clear previous content
+    
+    // Find the selected week
+    const weekData = data.weeks.find(week => week.week == weekNumber);
+    
+    if (weekData) {
+        contentDiv.innerHTML += `<h2>${weekData.topic}</h2>`;
+        
+        weekData.sections.forEach(section => {
+            contentDiv.innerHTML += `<h3>${section.title}</h3>`;
+            contentDiv.innerHTML += `<p>${section.content}</p>`;
+            
+            // Display subsections if they exist
+            if (section.subsections) {
+                section.subsections.forEach(subsection => {
+                    contentDiv.innerHTML += `<h4>${subsection.title}</h4>`;
+                    contentDiv.innerHTML += `<p>${subsection.content}</p>`;
+                });
+            }
+            
+            // Display lists if they exist
+            if (section.list) {
+                contentDiv.innerHTML += '<ul>';
+                section.list.forEach(item => {
+                    contentDiv.innerHTML += `<li><strong>${item.name}:</strong> ${item.description}</li>`;
+                });
+                contentDiv.innerHTML += '</ul>';
+            }
+        });
+    }
+}
+
+// Call the fetch function when the script loads
+fetchCourseContent();
