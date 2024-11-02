@@ -1,3 +1,12 @@
+function goBack() {
+    window.history.back(); // This will navigate back to the previous page in the browser history
+}
+
+// Alternatively, if you want to specify a particular page to go back to, you can do:
+// function goBack() {
+//     window.location.href = 'lessons.html'; // Change 'lessons.html' to your desired page
+// }
+
 document.addEventListener('DOMContentLoaded', () => {
     const colors = ['#FFDDC1', '#FFABAB', '#FFC3A0', '#D5AAFF', '#85E3FF'];
     
