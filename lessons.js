@@ -26,3 +26,31 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }, 50); // Adjust timing for smoothness
 });
+
+
+// Function to add a new student to the list
+function addStudent(name, phone) {
+    const studentList = document.getElementById("studentList");
+
+    // Create a new list item for the student
+    const listItem = document.createElement("li");
+    listItem.textContent = `${name} - ${phone}`;
+
+    // Append the new student to the list
+    studentList.appendChild(listItem);
+}
+
+// Handle form submission
+document.getElementById("studentForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent page refresh
+
+    // Get input values
+    const name = document.getElementById("studentName").value;
+    const phone = document.getElementById("studentPhone").value;
+
+    // Add student to the list
+    addStudent(name, phone);
+
+    // Clear form inputs
+    document.getElementById("studentForm").reset();
+});
