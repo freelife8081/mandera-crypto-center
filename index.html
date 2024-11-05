@@ -99,6 +99,76 @@
     <p>Get a <strong>50% discount</strong> for the first <strong>30 learners</strong>!</p>
     <p>Initial fee: <span style="text-decoration: line-through;">2000</span> KES, now <span style="color: white; background-color: red;">1000</span> KES!</p>
 </div>
+<!-- HTML -->
+<div id="popup-notice" class="popup-overlay">
+    <div class="popup-content">
+        <h2>Important Update!</h2>
+        <p>We’ve rescheduled our crypto class to December to help those juggling exams and personal commitments. We hope this timing works better for everyone!</p>
+        <button onclick="closePopup()">Got it!</button>
+    </div>
+</div>
+
+<!-- CSS -->
+<style>
+    .popup-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    .popup-content {
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        max-width: 400px;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .popup-content h2 {
+        margin: 0;
+        font-size: 1.5em;
+        color: #333;
+    }
+
+    .popup-content p {
+        margin: 15px 0;
+        font-size: 1em;
+        color: #666;
+    }
+
+    .popup-content button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1em;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+
+    .popup-content button:hover {
+        background-color: #45a049;
+    }
+</style>
+
+<!-- JavaScript -->
+<script>
+    function closePopup() {
+        document.getElementById("popup-notice").style.display = "none";
+    }
+
+    window.onload = function() {
+        document.getElementById("popup-notice").style.display = "flex";
+    };
+</script>
 
 </body>
 </html>
