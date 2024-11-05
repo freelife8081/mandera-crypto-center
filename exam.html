@@ -1,9 +1,55 @@
 <html>
-  <body>
-    
-    <center style="color: red; font-size: larger;">
+  <head>
+    <style>
+      body {
+        background-color: #f9f9f9;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .message-box {
+        text-align: center;
+        background-color: #fff;
+        border: 2px solid #e74c3c;
+        border-radius: 10px;
+        padding: 30px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        max-width: 500px;
+      }
+
+      .message-box p {
+        color: #e74c3c;
+        font-size: 1.2rem;
+        margin: 10px 0;
+        font-weight: bold;
+      }
+
+      .message-box p:first-child {
+        font-size: 1.5rem;
+      }
+
+      .message-box p:last-child {
+        font-size: 1rem;
+        color: #555;
+      }
+    </style>
+  </head>
+  <body onload="showPopup()">
+    <script>
+      function showPopup() {
+        alert("SORRY! THERE IS NOTHING HERE\nEXAM WILL START AFTER THE COURSE ENDS.\nTHE EXAM WILL START AFTER TWO WEEKS OF CLASS");
+        window.location.href = "https://freelife8081.github.io/mandera-crypto-center";
+      }
+    </script>
+
+    <div class="message-box">
       <p>SORRY! THERE IS NOTHING HERE</p>
-      <p>EXAM WILL START AFTER THE COURSE ENDS.</p> <p> THE EXAM WILL START AFTER TWO WEEKS OF CLASS</p>
-    </center>
+      <p>EXAM WILL START AFTER THE COURSE ENDS.</p> 
+      <p>THE EXAM WILL START AFTER TWO WEEKS OF CLASS</p>
+    </div>
   </body>
 </html>
