@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function() {
         formDataPhoto.append("caption", `Name: ${name}\nPhone: ${phone}\nAge: ${age}\nGender: ${gender}\nReferrer: ${referrerName}\nReferrer Phone: ${referrerPhone}`);
 
         try {
-            const responsePhoto = await fetch(`https://api.telegram.org/bot7527930234:AAHjjHCn1hR-an2QDCziqELvjs637uz5u0A/sendPhoto`, {
+            const responsePhoto = await fetch(`https://api.telegram.org/bot7527930234:AAEECA9JA7hgChK4ynOd59WRbNJiUE68LnQ/sendPhoto`, {
                 method: "POST",
                 body: formDataPhoto,
             });
