@@ -3,90 +3,142 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Notification Popup</title>
+  <title>update</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-    }
-
-    .popup {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
       display: flex;
       justify-content: center;
       align-items: center;
-      visibility: hidden;
-      opacity: 0;
-      transition: opacity 0.3s, visibility 0.3s;
+      height: 100vh;
+      background-color: #f4f4f4;
+      text-align: center;
     }
 
-    .popup.show {
-      visibility: visible;
+    .loading {
+      font-size: 1.5em;
+      color: #555;
+    }
+
+    .notification {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #007BFF;
+      color: white;
+      padding: 30px 50px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      transition: all 0.5s ease;
+      z-index: 1000;
+      font-size: 4vw; /* Responsive font size */
+      line-height: 1.5;
+      max-width: 90%; /* Prevents overflowing on smaller screens */
+      box-sizing: border-box;
+    }
+
+    .notification.show {
       opacity: 1;
     }
 
-    .popup-content {
-      background: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      max-width: 500px;
-      text-align: center;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    .notification h2 {
+      margin: 0 0 15px;
+      font-size: 6vw; /* Responsive heading font size */
     }
 
-    .popup-content h2 {
-      margin-top: 0;
-      color: #333;
+    .notification p {
+      margin: 0;
     }
 
-    .popup-content p {
-      color: #555;
-      margin: 15px 0;
-    }
-
-    .popup-content button {
-      padding: 10px 20px;
-      background-color: #007BFF;
-      color: white;
+    .notification button {
+      padding: 15px 25px;
+      background-color: white;
+      color: #007BFF;
       border: none;
       border-radius: 4px;
       cursor: pointer;
+      margin-top: 20px;
+      font-size: 1.2em;
     }
 
-    .popup-content button:hover {
+    .notification button:hover {
       background-color: #0056b3;
+      color: white;
+    }
+
+    /* Media Queries for smaller screens */
+    @media (max-width: 768px) {
+      .notification {
+        font-size: 6vw; /* Increase size on smaller screens */
+        padding: 20px 30px;
+      }
+
+      .notification h2 {
+        font-size: 7vw; /* Adjust heading size for smaller screens */
+      }
+
+      .notification button {
+        padding: 12px 20px;
+        font-size: 1em;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .notification {
+        font-size: 7vw; /* Further increase font size for very small screens */
+      }
+
+      .notification h2 {
+        font-size: 8vw; /* Larger heading on very small screens */
+      }
+
+      .notification button {
+        padding: 10px 15px;
+        font-size: 1em;
+      }
     }
   </style>
 </head>
 <body>
-  <div id="popup" class="popup">
-    <div class="popup-content">
-      <h2>Important Update</h2>
-      <p>
-        The Crypto Class project has been cancelled because it did not meet the required standards. 
-        Refunds have been processed for all payments made. Please note that no further questions will be addressed as the reasons have already been communicated. Thank you for your understanding.
-      </p>
-      <button id="closePopup">Close</button>
-    </div>
+  <div id="loadingMessage" class="loading">
+    Please wait, the website is being loaded...
+  </div>
+
+  <div id="notification" class="notification">
+    <h2>Important Update</h2>
+    <p id="message">
+      The Crypto Class project has been cancelled because it did not meet the required standards. Refunds have been processed for all payments made. Thank you for your understanding.
+    </p>
+    <button id="closeNotification">Close</button>
   </div>
 
   <script>
-    // Show the popup after the page loads
-    window.onload = function () {
-      const popup = document.getElementById('popup');
-      popup.classList.add('show');
-    };
+    // Preload the typing sound
+    const typingSound = new Audio('tsound.mp3'); // Replace with your preferred sound
+    typingSound.preload = 'auto';
 
-    // Close the popup when the close button is clicked
-    document.getElementById('closePopup').addEventListener('click', function () {
-      const popup = document.getElementById('popup');
-      popup.classList.remove('show');
+    // Show the notification with the sound after 10 seconds
+    setTimeout(() => {
+      // Hide the loading message
+      const loadingMessage = document.getElementById('loadingMessage');
+      loadingMessage.style.display = 'none';
+
+      // Show the notification
+      const notification = document.getElementById('notification');
+      notification.classList.add('show');
+
+      // Play the typing sound
+      typingSound.play();
+    }, 10000); // 10-second wait
+
+    // Close the notification when the close button is clicked
+    document.getElementById('closeNotification').addEventListener('click', function () {
+      const notification = document.getElementById('notification');
+      notification.classList.remove('show');
     });
   </script>
 </body>
