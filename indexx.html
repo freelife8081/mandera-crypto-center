@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notification Popup</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.3s, visibility 0.3s;
+    }
+
+    .popup.show {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .popup-content {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 500px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .popup-content h2 {
+      margin-top: 0;
+      color: #333;
+    }
+
+    .popup-content p {
+      color: #555;
+      margin: 15px 0;
+    }
+
+    .popup-content button {
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .popup-content button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <h2>Important Update</h2>
+      <p>
+        The Crypto Class project has been cancelled because it did not meet the required standards. 
+        Refunds have been processed for all payments made. Please note that no further questions will be addressed as the reasons have already been communicated. Thank you for your understanding.
+      </p>
+      <button id="closePopup">Close</button>
+    </div>
+  </div>
+
+  <script>
+    // Show the popup after the page loads
+    window.onload = function () {
+      const popup = document.getElementById('popup');
+      popup.classList.add('show');
+    };
+
+    // Close the popup when the close button is clicked
+    document.getElementById('closePopup').addEventListener('click', function () {
+      const popup = document.getElementById('popup');
+      popup.classList.remove('show');
+    });
+  </script>
+</body>
+</html>
