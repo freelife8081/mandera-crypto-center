@@ -38,6 +38,18 @@ header p {
     transition: transform 0.2s;
 }
 
+.exam{
+    margin-top: 20px;
+    display: inline-block;
+    background: #9B2335;
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+
 .tg-link:hover {
     transform: scale(1.1);
 }
