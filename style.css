@@ -286,3 +286,24 @@ button[data-theme="dark"] {
     margin: 10px;
     font-size: 1em;
 }
+
+.regist {
+  display: inline-block; /* Makes the link behave like a button */
+  padding: 10px 20px; /* Adds space inside the link */
+  background-color: #007BFF; /* Sets the background color (blue) */
+  color: white; /* Sets the text color */
+  font-size: 16px; /* Adjusts the font size */
+  text-decoration: none; /* Removes the underline */
+  border-radius: 5px; /* Rounds the corners */
+  transition: background-color 0.3s, transform 0.2s; /* Adds smooth effects */
+}
+
+.register-link:hover {
+  background-color: #0056b3; /* Darkens the background on hover */
+  transform: scale(1.05); /* Slightly enlarges the button on hover */
+}
+
+.register-link:active {
+  background-color: #003d80; /* Even darker background on click */
+  transform: scale(0.95); /* Slightly shrinks on click */
+}
