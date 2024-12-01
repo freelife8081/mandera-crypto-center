@@ -100,12 +100,16 @@
     <p>Get a <strong>50% discount</strong> for the first <strong>30 learners</strong>!</p>
     <p>Initial fee: <span style="text-decoration: line-through;">2000</span> KES, now <span style="color: white; background-color: red;">1000</span> KES!</p>
 </div>
-<!-- HTML -->
+<!-- Popup Notice -->
 <div id="popup-notice" class="popup-overlay">
     <div class="popup-content">
         <h2>Important Update!</h2>
-        <p style="color: red; font-size: large;">We rescheduled our crypto class to December to accommodate those balancing exams and personal commitments. Now that December has arrived, we're excited to begin and are just waiting for the remaining participants to register. Don’t miss your chance to join us!</p>
-        <button onclick="closePopup()">Got it!</button>
+        <p style="color: red; font-size: large;">
+            We rescheduled our crypto class to December to accommodate those balancing exams and personal commitments.
+            Now that December has arrived, we're excited to begin and are just waiting for the remaining participants to register. 
+            Don’t miss your chance to join us!
+        </p>
+        <button id="got-it-btn">Got it!</button>
     </div>
 </div>
 
@@ -162,12 +166,23 @@
 
 <!-- JavaScript -->
 <script>
+    // Function to close the popup
     function closePopup() {
-        document.getElementById("popup-notice").style.display = "none";
+        const popup = document.getElementById("popup-notice");
+        if (popup) {
+            popup.style.display = "none";
+        }
     }
 
-    window.onload = function() {
-        document.getElementById("popup-notice").style.display = "flex";
+    // Attach event listener to the "Got it" button
+    document.getElementById("got-it-btn").addEventListener("click", closePopup);
+
+    // Show the popup when the page loads
+    window.onload = function () {
+        const popup = document.getElementById("popup-notice");
+        if (popup) {
+            popup.style.display = "flex";
+        }
     };
 </script>
 
