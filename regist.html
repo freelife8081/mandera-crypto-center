@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+    <title>Mandera Crypto Center</title>
+    <link rel="stylesheet" href="style.css">
+    <!--<button id="themeToggle" onclick="toggleTheme()">Switch to Dark Mode</button> -->
+
+  </head>
+  <body>
+    <section class="registration">
+        <h2>Registration</h2>
+        <p>Pay <span style="color: white; background-color: red;">1000</span> KES via M-Pesa to the number <strong>0721264385</strong> and upload the screenshot of your payment message as proof.</p>
+        
+        <form id="registrationForm">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" min="10" required>
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="">Select</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+
+            <label for="referrerName">Who referred you to our program?</label>
+            <input type="text" id="referrerName" name="referrerName" required>
+
+            <label for="referrerPhone">Enter their phone number:</label>
+            <input type="tel" id="referrerPhone" name="referrerPhone" required>
+
+            <label for="learnerPhoto">Upload Your Photo:</label>
+            <input type="file" id="learnerPhoto" name="learnerPhoto" accept="image/*" required>
+            
+            <label for="screenshot">Upload Payment Screenshot:</label>
+            <input type="file" id="screenshot" name="screenshot" accept="image/*" required>
+            
+            <button type="submit">Register</button>
+            <center>Click Register and wait for some seconds</center>
+            <center style="color: red; font-family: sans-serif;">PLEASE ONLY CLICK ONCE AND WAIT!!</center>           
+            <center style="color: blue; font-family: trajan;">If registration fails, please contact 0791190745 or 0721264385</center>
+        </form>
+        
+        <p id="statusMessage"></p>
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>
