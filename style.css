@@ -247,8 +247,3 @@ footer {
   border-radius: 5px; /* Rounds the corners */
   text-decoration: none; /* Removes the underline */
 }
-
-.register-link:hover {
-  background-color: #0056b3; /* Darkens the background on hover */
-}
-
