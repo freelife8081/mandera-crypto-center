@@ -287,7 +287,7 @@ button[data-theme="dark"] {
     font-size: 1em;
 }
 
-.regist {
+.register-link {
   display: inline-block; /* Makes the link behave like a button */
   padding: 10px 20px; /* Adds space inside the link */
   background-color: #007BFF; /* Sets the background color (blue) */
