@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms and Conditions</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #007BFF;
+    }
+    h2 {
+      color: #555;
+    }
+    p {
+      margin-bottom: 15px;
+    }
+    ul {
+      margin: 15px 0;
+      padding-left: 20px;
+    }
+    ul li {
+      margin-bottom: 10px;
+    }
+    .highlight {
+      color: #d9534f;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Terms and Conditions</h1>
+    <p>Welcome to our course platform. By enrolling in our courses, you agree to abide by the following terms and conditions:</p>
+    
+    <h2>Payment Policy</h2>
+    <p>All payments are final and <span class="highlight">non-refundable</span>. Please ensure you have reviewed all course details before making any payments.</p>
+    
+    <h2>Course Access</h2>
+    <p>Access to course materials is granted only to registered and fully paid students. Sharing access with others is strictly prohibited.</p>
+    
+    <h2>Code of Conduct</h2>
+    <ul>
+      <li>Respect fellow students and instructors.</li>
+      <li>Refrain from sharing inappropriate content on the platform.</li>
+      <li>Engage actively and constructively during the sessions.</li>
+    </ul>
+    
+    <h2>Intellectual Property</h2>
+    <p>All course materials, including videos, documents, and resources, are the intellectual property of the course provider. Unauthorized sharing or reproduction is prohibited.</p>
+    
+    <h2>Termination</h2>
+    <p>We reserve the right to terminate access to the course for any student who violates these terms without prior notice.</p>
+    
+    <h2>Amendments</h2>
+    <p>These terms and conditions are subject to change. Updates will be communicated through the platform.</p>
+    
+    <p>If you have any questions regarding these terms, please contact us for clarification before proceeding.</p>
+  </div>
+</body>
+</html>
