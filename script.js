@@ -77,35 +77,3 @@ document.addEventListener("DOMContentLoaded", function () {
     function closeFloatingBox() {
         document.getElementById("floatingDiscountBox").style.display = "none";
     }
-
-    // Show the floating box when the page loads
-    window.onload = function () {
-        showFloatingBox();
-        const savedTheme = localStorage.getItem("theme") || "light";
-        document.body.setAttribute("data-theme", savedTheme);
-
-        // Update the toggle button text based on the saved theme
-        const toggleButton = document.getElementById("themeToggle");
-        toggleButton.textContent = savedTheme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode";
-    };
-
-    // Toggle theme between light and dark
-    function toggleTheme() {
-        const body = document.body;
-        const currentTheme = body.getAttribute("data-theme");
-
-        // Switch the theme
-        const newTheme = currentTheme === "light" ? "dark" : "light";
-        body.setAttribute("data-theme", newTheme);
-
-        // Update the button text
-        const toggleButton = document.getElementById("themeToggle");
-        toggleButton.textContent = newTheme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode";
-
-        // Save the user's preference in localStorage
-        localStorage.setItem("theme", newTheme);
-    }
-
-    // Attach the theme toggle function to the button
-    document.getElementById("themeToggle").addEventListener("click", toggleTheme);
-});
