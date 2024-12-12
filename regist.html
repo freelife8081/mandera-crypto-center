@@ -56,7 +56,7 @@
         <center>Click Register and wait for some seconds</center>    
     </form>
     
-    <p id="statusMessage" style="text-align: center; display: none;">Asking user to wait until registration is successful...</p>
+    <p id="statusMessage" style="text-align: center; display: none;">Processing your registration. Please wait... <span id="countdown"></span></p>
 </section>
 
 <script>
@@ -64,32 +64,35 @@
     const form = document.getElementById('registrationForm');
     const statusMessage = document.getElementById('statusMessage');
     const registerButton = document.getElementById('registerButton');
+    const countdown = document.getElementById('countdown');
 
     // Add submit event listener to the form
     form.addEventListener('submit', function (e) {
         e.preventDefault(); // Prevent actual form submission
 
-        // Display the wait message
-        statusMessage.style.display = 'block';
-        statusMessage.innerText = "Asking user to wait until registration is successful...";
+        // Initialize the countdown time (60 seconds)
+        let timeLeft = 60;
 
-        // Disable the register button to prevent multiple clicks
+        // Disable the register button to prevent multiple submissions
         registerButton.disabled = true;
 
-        // Simulate a 1-minute delay for registration processing
-        setTimeout(() => {
-            statusMessage.innerText = "Registration successful!";
-            registerButton.disabled = false; // Re-enable the button after the delay
-        }, 60000); // 60000ms = 1 minute
+        // Display the status message and start the countdown
+        statusMessage.style.display = 'block';
+        countdown.innerText = `${timeLeft} seconds`;
+
+        const timer = setInterval(() => {
+            timeLeft--;
+            countdown.innerText = `${timeLeft} seconds`;
+
+            if (timeLeft <= 0) {
+                clearInterval(timer);
+                statusMessage.innerText = "Registration successful! You can now proceed.";
+                registerButton.disabled = false; // Re-enable the button after the countdown
+            }
+        }, 1000); // Update every second
     });
 </script>
 
-
-    <script>
-        document.getElementById('closeNotification').addEventListener('click', function() {
-            document.getElementById('notification').style.display = 'none';
-        });
-    </script>
      <script src="script.js"></script>
   </body>
 </html>
