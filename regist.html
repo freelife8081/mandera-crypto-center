@@ -20,44 +20,70 @@
     </section>
 
     <section class="registration">
-        <h2>Registration</h2>
-        <p>Pay <span style="color: white; background-color: red;">1000</span> KES via M-Pesa to the number <strong>0721264385</strong> and upload the screenshot of your payment message as proof.</p>
+    <h2>Registration</h2>
+    <p>Pay <span style="color: white; background-color: red;">1000</span> KES via M-Pesa to the number <strong>0721264385</strong> and upload the screenshot of your payment message as proof.</p>
+
+    <form id="registrationForm">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" min="10" required>
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+            <option value="">Select</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+
+        <label for="referrerName">Who referred you to our program?</label>
+        <input type="text" id="referrerName" name="referrerName" required>
+
+        <label for="referrerPhone">Enter their phone number:</label>
+        <input type="tel" id="referrerPhone" name="referrerPhone" required>
+
+        <label for="learnerPhoto">Upload Your Photo:</label>
+        <input type="file" id="learnerPhoto" name="learnerPhoto" accept="image/*" required>
         
-        <form id="registrationForm">
-            <label for="name">Full Name:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="phone">Phone Number:</label>
-            <input type="tel" id="phone" name="phone" required>
-
-            <label for="age">Age:</label>
-            <input type="number" id="age" name="age" min="10" required>
-
-            <label for="gender">Gender:</label>
-            <select id="gender" name="gender" required>
-                <option value="">Select</option>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-            </select>
-
-            <label for="referrerName">Who referred you to our program?</label>
-            <input type="text" id="referrerName" name="referrerName" required>
-
-            <label for="referrerPhone">Enter their phone number:</label>
-            <input type="tel" id="referrerPhone" name="referrerPhone" required>
-
-            <label for="learnerPhoto">Upload Your Photo:</label>
-            <input type="file" id="learnerPhoto" name="learnerPhoto" accept="image/*" required>
-            
-            <label for="screenshot">Upload Payment Screenshot:</label>
-            <input type="file" id="screenshot" name="screenshot" accept="image/*" required>
-            
-            <button type="submit">Register</button>
-            <center>Click Register and wait for some seconds</center>    
-        </form>
+        <label for="screenshot">Upload Payment Screenshot:</label>
+        <input type="file" id="screenshot" name="screenshot" accept="image/*" required>
         
-        <p id="statusMessage"></p>
-    </section>
+        <button type="submit" id="registerButton">Register</button>
+        <center>Click Register and wait for some seconds</center>    
+    </form>
+    
+    <p id="statusMessage" style="text-align: center; display: none;">Asking user to wait until registration is successful...</p>
+</section>
+
+<script>
+    // Get form and button elements
+    const form = document.getElementById('registrationForm');
+    const statusMessage = document.getElementById('statusMessage');
+    const registerButton = document.getElementById('registerButton');
+
+    // Add submit event listener to the form
+    form.addEventListener('submit', function (e) {
+        e.preventDefault(); // Prevent actual form submission
+
+        // Display the wait message
+        statusMessage.style.display = 'block';
+        statusMessage.innerText = "Asking user to wait until registration is successful...";
+
+        // Disable the register button to prevent multiple clicks
+        registerButton.disabled = true;
+
+        // Simulate a 1-minute delay for registration processing
+        setTimeout(() => {
+            statusMessage.innerText = "Registration successful!";
+            registerButton.disabled = false; // Re-enable the button after the delay
+        }, 60000); // 60000ms = 1 minute
+    });
+</script>
+
 
     <script>
         document.getElementById('closeNotification').addEventListener('click', function() {
