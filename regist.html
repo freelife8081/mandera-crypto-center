@@ -15,7 +15,7 @@
       <p>
         <strong>Notice:</strong> Do not ask for money refund. Fee once paid is liquidated. <span style="font-weight: bold;">We wont be able to refund your money.</span>. 
         Ensure you review the <a href="terms.html" target="_blank">terms and conditions</a> before proceeding.
-        <button id="closeNotification" style="margin-left: 10px; padding: 5px; background-color: transparent; border: none; color: #721c24; cursor: pointer; font-size: 14px;">OK Huska</button>
+        <button id="closeNotification" style="margin-left: 10px; padding: 5px; background-color: transparent; border: none; color: #721c24; cursor: pointer; font-size: 14px;">OK confirmed</button>
       </p>
     </section>
 
@@ -52,8 +52,7 @@
         <label for="screenshot">Upload Payment Screenshot:</label>
         <input type="file" id="screenshot" name="screenshot" accept="image/*" required>
         
-        <button type="submit" id="registerButton">Register</button>
-        <center>Click Register and wait for some seconds</center>    
+        <button type="submit" id="registerButton">Register</button>    
     </form>
     
     <p id="statusMessage" style="text-align: center; display: none;">Processing your registration. Please wait... <span id="countdown"></span></p>
@@ -86,7 +85,7 @@
 
             if (timeLeft <= 0) {
                 clearInterval(timer);
-                statusMessage.innerText = "Registration successful! You can now proceed.";
+                statusMessage.innerText = "Registration successful! You can now receive class login username from Hussein..";
                 registerButton.disabled = false; // Re-enable the button after the countdown
             }
         }, 1000); // Update every second
