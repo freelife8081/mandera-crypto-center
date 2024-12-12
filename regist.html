@@ -7,6 +7,18 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
+    <header style="text-align: center; margin-bottom: 20px;">
+      <img src="mdr.jpg" alt="Mandera Crypto Center Logo" style="width: 100px; height: 100px; border-radius: 50%;">
+    </header>
+
+    <section class="notification" id="notification" style="display: block; background-color: #f8d7da; color: #721c24; padding: 10px; border: 1px solid #f5c6cb; border-radius: 5px; margin-bottom: 15px;">
+      <p>
+        <strong>Notice:</strong> All fees paid are <span style="font-weight: bold;">non-refundable</span>. 
+        Ensure you review the <a href="terms.html" target="_blank">terms and conditions</a> before proceeding.
+        <button id="closeNotification" style="margin-left: 10px; padding: 5px; background-color: transparent; border: none; color: #721c24; cursor: pointer; font-size: 14px;">Dismiss</button>
+      </p>
+    </section>
+
     <section class="registration">
         <h2>Registration</h2>
         <p>Pay <span style="color: white; background-color: red;">1000</span> KES via M-Pesa to the number <strong>0721264385</strong> and upload the screenshot of your payment message as proof.</p>
@@ -67,8 +79,8 @@
     </section>
 
     <script>
-        document.getElementById('name').addEventListener('focus', function() {
-            alert("Please note: Payments are non-refundable. Ensure you read and agree to the terms and conditions before proceeding.");
+        document.getElementById('closeNotification').addEventListener('click', function() {
+            document.getElementById('notification').style.display = 'none';
         });
     </script>
   </body>
