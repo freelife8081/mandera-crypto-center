@@ -1,11 +1,10 @@
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
     <title>Mandera Crypto Center</title>
     <link rel="stylesheet" href="style.css">
-    <!--<button id="themeToggle" onclick="toggleTheme()">Switch to Dark Mode</button> -->
-
   </head>
   <body>
     <section class="registration">
@@ -43,29 +42,34 @@
             
             <button type="submit">Register</button>
             <center>Click Register and wait for some seconds</center>
-            <center><p style="
-    font-family: Arial, sans-serif; 
-    text-align: center; 
-    background-color: #fff; 
-    padding: 20px; 
-    border-radius: 10px; 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-    max-width: 500px; 
-    margin: 20px auto; 
-    color: #555; 
-    font-size: 16px; 
-    line-height: 1.5;
-">
-  <strong style="font-size: 20px; color: #333;">Payment Policy:</strong><br>
-  Please note: All fees paid are <span style="color: #d9534f; font-weight: bold;">non-refundable</span>. 
-  Ensure you review the <a href="terms.html" target="_blank">terms and conditions</a>
- before completing your payment.
-</p>
-</center>           
+            <center>
+                <p style="
+                    font-family: Arial, sans-serif; 
+                    text-align: center; 
+                    background-color: #fff; 
+                    padding: 20px; 
+                    border-radius: 10px; 
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+                    max-width: 500px; 
+                    margin: 20px auto; 
+                    color: #555; 
+                    font-size: 16px; 
+                    line-height: 1.5;
+                ">
+                    <strong style="font-size: 20px; color: #333;">Payment Policy:</strong><br>
+                    Please note: All fees paid are <span style="color: #d9534f; font-weight: bold;">non-refundable</span>. 
+                    Ensure you review the <a href="terms.html" target="_blank">terms and conditions</a> before completing your payment.
+                </p>
+            </center>           
         </form>
         
         <p id="statusMessage"></p>
     </section>
-    <script src="script.js"></script>
+
+    <script>
+        document.getElementById('name').addEventListener('focus', function() {
+            alert("Please note: Payments are non-refundable. Ensure you read and agree to the terms and conditions before proceeding.");
+        });
+    </script>
   </body>
 </html>
