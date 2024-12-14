@@ -13,7 +13,7 @@
 
     <section class="notification" id="notification" style="display: block; background-color: #f8d7da; color: #721c24; padding: 10px; border: 1px solid #f5c6cb; border-radius: 5px; margin-bottom: 15px;">
       <p>
-        <strong>Notice:</strong> Registeration fee once paid is <span style="font-weight: bold;">non-refundable</span>. 
+        <strong>Notice:</strong> All fees paid are <span style="font-weight: bold;">non-refundable</span>. 
         Ensure you review the <a href="terms.html" target="_blank">terms and conditions</a> before proceeding.
         <button id="closeNotification" style="margin-left: 10px; padding: 5px; background-color: transparent; border: none; color: #721c24; cursor: pointer; font-size: 14px;">Dismiss</button>
       </p>
@@ -53,17 +53,35 @@
             <input type="file" id="screenshot" name="screenshot" accept="image/*" required>
             
             <button type="submit">Register</button>
-            <center>Click Register and wait for some seconds</center>     
+            <center>Click Register and wait for some seconds</center>
+            <center>
+                <p style="
+                    font-family: Arial, sans-serif; 
+                    text-align: center; 
+                    background-color: #fff; 
+                    padding: 20px; 
+                    border-radius: 10px; 
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+                    max-width: 500px; 
+                    margin: 20px auto; 
+                    color: #555; 
+                    font-size: 16px; 
+                    line-height: 1.5;
+                ">
+                    <strong style="font-size: 20px; color: #333;">Payment Policy:</strong><br>
+                    Please note: All fees paid are <span style="color: #d9534f; font-weight: bold;">non-refundable</span>. 
+                    Ensure you review the <a href="terms.html" target="_blank">terms and conditions</a> before completing your payment.
+                </p>
+            </center>           
         </form>
         
         <p id="statusMessage"></p>
-    </section>
-
-    <script>
+      <script>
         document.getElementById('closeNotification').addEventListener('click', function() {
             document.getElementById('notification').style.display = 'none';
         });
     </script>
+    </section>
     <script src="script.js"></script>
   </body>
 </html>
