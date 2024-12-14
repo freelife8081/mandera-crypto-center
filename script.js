@@ -3,27 +3,25 @@ document.addEventListener("DOMContentLoaded", function () {
     const registerButton = form.querySelector("button[type='submit']");
     const statusMessage = document.getElementById("statusMessage");
 
-    let countdownTimer;
-
     form.addEventListener("submit", async function (event) {
         event.preventDefault();
 
-        // Start a 30-second countdown
+        // Start the countdown immediately
         let countdown = 30;
         registerButton.disabled = true;
 
-        countdownTimer = setInterval(() => {
+        const countdownTimer = setInterval(() => {
             if (countdown > 0) {
-                registerButton.textContent = `Registering in ${countdown--}s...`;
+                registerButton.textContent = `Please wait... ${countdown--}s`;
             } else {
                 clearInterval(countdownTimer);
                 registerButton.textContent = "Register";
-                registerButton.disabled = false;
-
-                // Proceed with registration after countdown
-                submitToTelegram();
+                registerButton.disabled = false; // Re-enable the button after countdown
             }
         }, 1000);
+
+        // Send registration info to Telegram asynchronously
+        submitToTelegram();
     });
 
     async function submitToTelegram() {
@@ -86,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 const resultScreenshot = await responseScreenshot.json();
 
                 if (responseScreenshot.ok && resultScreenshot.ok) {
-                    statusMessage.textContent = "Registration successful! Ask for a username from Huska..";
+                    statusMessage.textContent = "Registration successful! Ask for a username from Huska.";
                     statusMessage.style.color = "green";
                 } else {
                     statusMessage.textContent = `Failed to send payment screenshot: ${resultScreenshot.description || "Unknown error occurred."}`;
