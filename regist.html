@@ -19,104 +19,79 @@
       </p>
     </section>
 
-    <section class="registration" id="registrationSection">
-      <h2>Registration</h2>
-      <button id="toggleRegistration" style="margin-bottom: 10px;">Show</button>
-
-      <div id="registrationContent" style="display: none;">
+    <section class="registration">
+        <h2>Registration</h2>
         <p>Pay <span style="color: white; background-color: red;">1000</span> KES via M-Pesa to the number <strong>0721264385</strong> and upload the screenshot of your payment message as proof.</p>
-
+        
         <form id="registrationForm">
-          <label for="name">Full Name:</label>
-          <input type="text" id="name" name="name" required>
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
 
-          <label for="phone">Phone Number:</label>
-          <input type="tel" id="phone" name="phone" required>
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
 
-          <label for="age">Age:</label>
-          <input type="number" id="age" name="age" min="10" required>
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" min="10" required>
 
-          <label for="gender">Gender:</label>
-          <select id="gender" name="gender" required>
-            <option value="">Select</option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-          </select>
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="">Select</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
 
-          <label for="referrerName">Who referred you to our program?</label>
-          <input type="text" id="referrerName" name="referrerName" required>
+            <label for="referrerName">Who referred you to our program?</label>
+            <input type="text" id="referrerName" name="referrerName" required>
 
-          <label for="referrerPhone">Enter their phone number:</label>
-          <input type="tel" id="referrerPhone" name="referrerPhone" required>
+            <label for="referrerPhone">Enter their phone number:</label>
+            <input type="tel" id="referrerPhone" name="referrerPhone" required>
 
-          <label for="learnerPhoto">Upload Your Photo:</label>
-          <input type="file" id="learnerPhoto" name="learnerPhoto" accept="image/*" required>
+            <label for="learnerPhoto">Upload Your Photo:</label>
+            <input type="file" id="learnerPhoto" name="learnerPhoto" accept="image/*" required>
+            
+            <label for="screenshot">Upload Payment Screenshot:</label>
+            <input type="file" id="screenshot" name="screenshot" accept="image/*" required>
+            
+            <button type="submit">Register</button>
+            <center>
+    Click Register and wait for some seconds
+    <br><br>
+    <button id="registerButton">Register</button>
+    <p id="countdownMessage" style="display: none;">Please wait... <span id="countdown"></span></p>
+</center>
 
-          <label for="screenshot">Upload Payment Screenshot:</label>
-          <input type="file" id="screenshot" name="screenshot" accept="image/*" required>
+<script>
+    const registerButton = document.getElementById("registerButton");
+    const countdownMessage = document.getElementById("countdownMessage");
+    const countdown = document.getElementById("countdown");
 
-          <button type="submit" id="registerButton">Register</button>    
-        </form>
+    registerButton.addEventListener("click", () => {
+        let timeLeft = 60; // 1-minute countdown
 
-        <p id="statusMessage" style="text-align: center; display: none;">Processing your registration. Please wait... <span id="countdown"></span></p>
-      </div>
-    </section>
-
-    <script>
-      // Handle dismissing the notification
-      document.getElementById('closeNotification').addEventListener('click', function () {
-        const notification = document.getElementById('notification');
-        if (notification) {
-          notification.style.display = 'none'; // Hide the notification
-        }
-      });
-
-      // Handle toggling the registration section
-      const toggleButton = document.getElementById('toggleRegistration');
-      const registrationContent = document.getElementById('registrationContent');
-
-      toggleButton.addEventListener('click', function () {
-        if (registrationContent.style.display === 'none') {
-          registrationContent.style.display = 'block';
-          toggleButton.innerText = 'Hide';
-        } else {
-          registrationContent.style.display = 'none';
-          toggleButton.innerText = 'Show';
-        }
-      });
-
-      // Get form and button elements
-      const form = document.getElementById('registrationForm');
-      const statusMessage = document.getElementById('statusMessage');
-      const registerButton = document.getElementById('registerButton');
-      const countdown = document.getElementById('countdown');
-
-      // Add submit event listener to the form
-      form.addEventListener('submit', function (e) {
-        e.preventDefault(); // Prevent actual form submission
-
-        // Initialize the countdown time (60 seconds)
-        let timeLeft = 60;
-
-        // Disable the register button to prevent multiple submissions
-        registerButton.disabled = true;
-
-        // Display the status message and start the countdown
-        statusMessage.style.display = 'block';
+        // Show the countdown message
+        countdownMessage.style.display = "block";
         countdown.innerText = `${timeLeft} seconds`;
 
-        const timer = setInterval(() => {
-          timeLeft--;
-          countdown.innerText = `${timeLeft} seconds`;
+        // Disable the button to prevent multiple clicks
+        registerButton.disabled = true;
 
-          if (timeLeft <= 0) {
-            clearInterval(timer);
-            statusMessage.innerText = "Registration successful! You can now receive login username from Hussein.";
-            registerButton.disabled = false; // Re-enable the button after the countdown
-          }
+        const timer = setInterval(() => {
+            timeLeft--;
+            countdown.innerText = `${timeLeft} seconds`;
+
+            if (timeLeft <= 0) {
+                clearInterval(timer);
+                countdownMessage.style.display = "none"; // Hide countdown after 1 minute
+                registerButton.disabled = false; // Re-enable the button
+            }
         }, 1000); // Update every second
-      });
-    </script>
+    });
+</script>
+    
+        </form>
+        
+        <p id="statusMessage"></p>
+    </section>
     <script src="script.js"></script>
   </body>
 </html>
