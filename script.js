@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("registrationForm").addEventListener("submit", async function (event) {
         event.preventDefault();
         
+        // Input values
         const name = document.getElementById("name").value;
         const phone = document.getElementById("phone").value;
         const age = document.getElementById("age").value;
@@ -12,16 +13,25 @@ document.addEventListener("DOMContentLoaded", function () {
         const learnerPhoto = document.getElementById("learnerPhoto").files[0];
         const screenshot = document.getElementById("screenshot").files[0];
 
+        // Check for required file uploads
         if (!screenshot || !learnerPhoto) {
             document.getElementById("statusMessage").textContent = "Please upload your photo and payment screenshot.";
+            document.getElementById("statusMessage").style.color = "red";
             return;
         }
 
-        const botToken = "7527930234:AAEECA9JA7hgChK4ynOd59WRbNJiUE68LnQ";
+        // Check network connection
+        if (!navigator.onLine) {
+            document.getElementById("statusMessage").textContent = "No internet connection. Please try again.";
+            document.getElementById("statusMessage").style.color = "red";
+            return;
+        }
+
+        const botToken = "7527930234:AAGtGzngXhsAS7JnLsooCECvBBPvTPBy2SM";
         const chatId = "7361816575";
 
         try {
-            // Send the learner photo with details
+            // Send learner photo with details
             const formDataPhoto = new FormData();
             formDataPhoto.append("chat_id", chatId);
             formDataPhoto.append("photo", learnerPhoto);
@@ -67,13 +77,3 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("statusMessage").style.color = "red";
         }
     });
-
-    // Function to show the floating discount box
-    function showFloatingBox() {
-        document.getElementById("floatingDiscountBox").style.display = "block";
-    }
-
-    // Function to close the floating discount box
-    function closeFloatingBox() {
-        document.getElementById("floatingDiscountBox").style.display = "none";
-    }
