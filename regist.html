@@ -57,58 +57,11 @@
         <input type="file" id="screenshot" name="screenshot" accept="image/*" required>
         
         <button type="submit">Register</button>
-
-        <!-- Countdown Section -->
+        <p id="statusMessage"></p>
         <center>
-          Click Register and wait for some seconds
-          <br><br>
-          <button id="registerButton">Register</button>
-          <p id="countdownMessage" style="display: none;">Please wait... <span id="countdown"></span></p>
-        </center>
+          Click Register and wait for some seconds</center>
       </form>
-      <p id="statusMessage"></p>
-    </section>
-
-    <!-- JavaScript Section -->
-    <script>
-      // Handle dismissing the notification
-      const closeNotificationButton = document.getElementById("closeNotification");
-      const notificationSection = document.getElementById("notification");
-
-      closeNotificationButton.addEventListener("click", function () {
-        // Hide the notification section when clicked
-        notificationSection.style.display = "none";
-      });
-
-      // Countdown for Register Button
-      const registerButton = document.getElementById("registerButton");
-      const countdownMessage = document.getElementById("countdownMessage");
-      const countdown = document.getElementById("countdown");
-
-      registerButton.addEventListener("click", (e) => {
-        e.preventDefault(); // Prevent default behavior
-
-        let timeLeft = 60; // 1-minute countdown
-
-        // Show the countdown message
-        countdownMessage.style.display = "block";
-        countdown.innerText = `${timeLeft} seconds`;
-
-        // Disable the button to prevent multiple clicks
-        registerButton.disabled = true;
-
-        const timer = setInterval(() => {
-          timeLeft--;
-          countdown.innerText = `${timeLeft} seconds`;
-
-          if (timeLeft <= 0) {
-            clearInterval(timer);
-            countdownMessage.style.display = "none"; // Hide countdown after 1 minute
-            registerButton.disabled = false; // Re-enable the button
-          }
-        }, 1000); // Update every second
-      });
-    </script>
+      </section>
     <script src="script.js"></script>
   </body>
 </html>
