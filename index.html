@@ -3,35 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
-    <title>Mandera Crypto Center</title>
-    <link rel="stylesheet" href="style.css">
-    <!--<button id="themeToggle" onclick="toggleTheme()">Switch to Dark Mode</button> -->
+    <title>Mandera Crypto Academy</title>
+    <link rel="stylesheet" href="styl1e.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
 
+        body {
+            background-color: #f5f8fa;
+            color: #14171a;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        header img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            color: #1da1f2;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1rem;
+            color: #657786;
+            margin-bottom: 20px;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-size: 1rem;
+            color: #1da1f2;
+            border: 1px solid #1da1f2;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .nav-links a:hover {
+            background-color: #1da1f2;
+            color: #fff;
+        }
+
+        section {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 1.5rem;
+            color: #14171a;
+            margin-bottom: 10px;
+        }
+
+        section p {
+            font-size: 1rem;
+            color: #657786;
+            line-height: 1.5;
+        }
+
+        .discount p {
+            color: #e0245e;
+            font-weight: bold;
+        }
+
+        .regist {
+            display: inline-block;
+            text-decoration: none;
+            color: #fff;
+            background-color: #1da1f2;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 1rem;
+            margin-top: 15px;
+        }
+
+        .regist:hover {
+            background-color: #0d8dd6;
+        }
+
+        footer {
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: #657786;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-
     <header>
+        <img src="logo.png" alt="Mandera Crypto Academy Logo">
         <h1>Mandera Crypto Academy</h1>
         <p>Your Gateway to Cryptocurrency Education and Financial Freedom</p>
-        <a href="https://t.me/+eq2Gahm9pPZkYjlk" target="_blank" class="tg-link">Join us on Telegram</a>
-        <a href="https://huseiney.github.io/registered.users/" class="lesson"> Join class</a>
-        <a href="exam.html" class="exam">Click to do the test</a>
     </header>
 
-    <!-- Countdown Timer Section -->
-    <!-- <section class="timer-section">
-        <h2>Countdown to Course Start</h2>
-        <p id="timer">Loading...</p> <!-- This is where the timer will display
-    </section> -->
+    <nav class="nav-links">
+        <a href="https://t.me/+eq2Gahm9pPZkYjlk" target="_blank">Telegram</a>
+        <a href="https://huseiney.github.io/registered.users/">Join Class</a>
+        <a href="exam.html">Take Test</a>
+    </nav>
 
     <section class="intro">
         <h2>About Us</h2>
-        <p class="intro-text">At Mandera Crypto Academy, we provide comprehensive cryptocurrency education to empower our students with knowledge and skills to thrive in the digital finance world. From beginners to advanced learners, we cover everything you need to succeed!</p>
+        <p>At Mandera Crypto Academy, we provide comprehensive cryptocurrency education to empower our students with knowledge and skills to thrive in the digital finance world. From beginners to advanced learners, we cover everything you need to succeed!</p>
     </section>
 
     <section class="referral">
         <h2>Referral Program</h2>
-        <p>Earn rewards by introducing new learners to Mandera Crypto Academy. For each referral, you receive a KES 100 as a token of appreciation for growing our community!</p>
+        <p>Earn rewards by introducing new learners to Mandera Crypto Academy. For each referral, you receive KES 100 as a token of appreciation for growing our community!</p>
     </section>
 
     <section class="freedom">
@@ -39,18 +149,15 @@
         <p>Join us to learn how you can gain financial independence through cryptocurrency and blockchain technology. With hands-on training and real-world insights, Mandera Crypto Academy is here to guide you toward a financially secure future.</p>
     </section>
 
-    <!-- Discount Section -->
     <section class="discount">
         <h2>Limited Time Offer!</h2>
         <p>We are offering a <strong>50% discount</strong> for the first <strong>30 learners</strong> to register!</p>
         <p>The initial fee was <span style="text-decoration: line-through;">2000</span> KES, but now it's only <span style="color: white; background-color: red;">1000</span> KES!</p>
+        <a class="regist" href="regist.html">Register Now</a>
     </section>
-    <section> <a class="regist" href="regist.html">REGISTER</section>
-    
-    <!--<footer>
-        <p>Mandera Crypto Center © 2024. All Rights Reserved.</p>
-    </footer> -->
 
-    <script src="script.js"></script>
+    <footer>
+        <p>Mandera Crypto Academy &copy; 2024. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>
