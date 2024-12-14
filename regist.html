@@ -1,65 +1,160 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mandera Crypto Center</title>
     <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <header style="text-align: center; margin-bottom: 20px;">
-      <img src="mdr.jpg" alt="Mandera Crypto Center Logo" style="width: 100px; height: 100px; border-radius: 50%;">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f8fa;
+            color: #14171a;
+        }
+
+        header {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        header img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid #1da1f2;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .notification {
+            display: block;
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 10px;
+            border: 1px solid #f5c6cb;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .notification button {
+            background-color: transparent;
+            border: none;
+            color: #721c24;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #1da1f2;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccd6dd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        button {
+            background-color: #1da1f2;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0d95e8;
+        }
+
+        #statusMessage {
+            text-align: center;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 12px;
+            color: #657786;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="mdr.jpg" alt="Mandera Crypto Center Logo" id="logo">
     </header>
 
-    <section class="notification" id="notification" style="display: block; background-color: #f8d7da; color: #721c24; padding: 10px; border: 1px solid #f5c6cb; border-radius: 5px; margin-bottom: 15px;">
-      <p>
-        <strong>Notice:</strong> All fees paid are <span style="font-weight: bold;">non-refundable</span>. 
-        Ensure you review the <a href="terms.html" target="_blank">terms and conditions</a> before proceeding.
-        <button id="closeNotification" style="margin-left: 10px; padding: 5px; background-color: transparent; border: none; color: #721c24; cursor: pointer; font-size: 14px;">Dismiss</button>
-      </p>
-    </section>
+    <div class="container">
+        <section class="notification" id="notification">
+            <p>
+                <strong>Notice:</strong> All fees paid are <span style="font-weight: bold;">non-refundable</span>.
+                Ensure you review the <a href="terms.html" target="_blank" style="color: #721c24;">terms and conditions</a> before proceeding.
+                <button id="closeNotification">Dismiss</button>
+            </p>
+        </section>
 
-    <section class="registration">
-        <h2>Registration</h2>
-        <p>Pay <span style="color: white; background-color: red;">1000</span> KES via M-Pesa to the number <strong>0721264385</strong> and upload the screenshot of your payment message as proof.</p>
-        
-        <form id="registrationForm">
-            <label for="name">Full Name:</label>
-            <input type="text" id="name" name="name" required>
+        <section class="registration">
+            <h2>Create Your Account</h2>
+            <form id="registrationForm">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="John Doe" required>
 
-            <label for="phone">Phone Number:</label>
-            <input type="tel" id="phone" name="phone" required>
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="0712345678" required>
 
-            <label for="age">Age:</label>
-            <input type="number" id="age" name="age" min="10" required>
+                <label for="age">Age</label>
+                <input type="number" id="age" name="age" min="10" placeholder="18" required>
 
-            <label for="gender">Gender:</label>
-            <select id="gender" name="gender" required>
-                <option value="">Select</option>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-            </select>
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender" required>
+                    <option value="">Select</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
 
-            <label for="referrerName">Who referred you to our program?</label>
-            <input type="text" id="referrerName" name="referrerName" required>
+                <label for="referrerName">Referrer's Name</label>
+                <input type="text" id="referrerName" name="referrerName" placeholder="Referrer Name" required>
 
-            <label for="referrerPhone">Enter their phone number:</label>
-            <input type="tel" id="referrerPhone" name="referrerPhone" required>
+                <label for="referrerPhone">Referrer's Phone Number</label>
+                <input type="tel" id="referrerPhone" name="referrerPhone" placeholder="0712345678" required>
 
-            <label for="learnerPhoto">Upload Your Photo:</label>
-            <input type="file" id="learnerPhoto" name="learnerPhoto" accept="image/*" required>
-            
-            <label for="screenshot">Upload Payment Screenshot:</label>
-            <input type="file" id="screenshot" name="screenshot" accept="image/*" required>
-            
-            <button type="submit">Register</button>
-            <center>Click Register and wait for some seconds</center>           
-        </form>
-        
-        <p id="statusMessage"></p>
-    </section>
+                <label for="learnerPhoto">Upload Your Photo</label>
+                <input type="file" id="learnerPhoto" name="learnerPhoto" accept="image/*" required>
+
+                <label for="screenshot">Payment Screenshot</label>
+                <input type="file" id="screenshot" name="screenshot" accept="image/*" required>
+
+                <button type="submit">Register</button>
+            </form>
+
+            <p id="statusMessage"></p>
+        </section>
+    </div>
+
+    <footer>
+        © 2024 Mandera Crypto Center. All rights reserved.
+    </footer>
 
     <script src="script.js"></script>
-  </body>
+</body>
 </html>
-```
