@@ -7,65 +7,87 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
+    <!-- Header Section -->
     <header style="text-align: center; margin-bottom: 20px;">
       <img src="mdr.jpg" alt="Mandera Crypto Center Logo" style="width: 100px; height: 100px; border-radius: 50%;">
     </header>
 
+    <!-- Notification Section -->
     <section class="notification" id="notification" style="display: block; background-color: #f8d7da; color: #721c24; padding: 10px; border: 1px solid #f5c6cb; border-radius: 5px; margin-bottom: 15px;">
       <p>
-        <strong>Notice:</strong> Do not ask for money refund. Fee once paid is liquidated. <span style="font-weight: bold;">We won’t be able to refund your money.</span>
-        Ensure you review the <a href="terms.html" target="_blank">terms and conditions</a> before proceeding.
+        <strong>Important Notice:</strong>  
+        All payments are final and non-refundable. Once fees are processed, they cannot be reversed under any circumstances.  
+        Please ensure you review our <a href="terms.html" target="_blank">terms and conditions</a> before proceeding.  
         <button id="closeNotification" style="margin-left: 10px; padding: 5px; background-color: transparent; border: none; color: #721c24; cursor: pointer; font-size: 14px;">Dismiss</button>
       </p>
     </section>
 
+    <!-- Registration Section -->
     <section class="registration">
-        <h2>Registration</h2>
-        <p>Pay <span style="color: white; background-color: red;">1000</span> KES via M-Pesa to the number <strong>0721264385</strong> and upload the screenshot of your payment message as proof.</p>
+      <h2>Registration</h2>
+      <p>Pay <span style="color: white; background-color: red;">1000</span> KES via M-Pesa to the number <strong>0721264385</strong> and upload the screenshot of your payment message as proof.</p>
+      
+      <form id="registrationForm">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" min="10" required>
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+          <option value="">Select</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+
+        <label for="referrerName">Who referred you to our program?</label>
+        <input type="text" id="referrerName" name="referrerName" required>
+
+        <label for="referrerPhone">Enter their phone number:</label>
+        <input type="tel" id="referrerPhone" name="referrerPhone" required>
+
+        <label for="learnerPhoto">Upload Your Photo:</label>
+        <input type="file" id="learnerPhoto" name="learnerPhoto" accept="image/*" required>
         
-        <form id="registrationForm">
-            <label for="name">Full Name:</label>
-            <input type="text" id="name" name="name" required>
+        <label for="screenshot">Upload Payment Screenshot:</label>
+        <input type="file" id="screenshot" name="screenshot" accept="image/*" required>
+        
+        <button type="submit">Register</button>
 
-            <label for="phone">Phone Number:</label>
-            <input type="tel" id="phone" name="phone" required>
+        <!-- Countdown Section -->
+        <center>
+          Click Register and wait for some seconds
+          <br><br>
+          <button id="registerButton">Register</button>
+          <p id="countdownMessage" style="display: none;">Please wait... <span id="countdown"></span></p>
+        </center>
+      </form>
+      <p id="statusMessage"></p>
+    </section>
 
-            <label for="age">Age:</label>
-            <input type="number" id="age" name="age" min="10" required>
+    <!-- JavaScript Section -->
+    <script>
+      // Handle dismissing the notification
+      const closeNotificationButton = document.getElementById("closeNotification");
+      const notificationSection = document.getElementById("notification");
 
-            <label for="gender">Gender:</label>
-            <select id="gender" name="gender" required>
-                <option value="">Select</option>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-            </select>
+      closeNotificationButton.addEventListener("click", function () {
+        // Hide the notification section when clicked
+        notificationSection.style.display = "none";
+      });
 
-            <label for="referrerName">Who referred you to our program?</label>
-            <input type="text" id="referrerName" name="referrerName" required>
+      // Countdown for Register Button
+      const registerButton = document.getElementById("registerButton");
+      const countdownMessage = document.getElementById("countdownMessage");
+      const countdown = document.getElementById("countdown");
 
-            <label for="referrerPhone">Enter their phone number:</label>
-            <input type="tel" id="referrerPhone" name="referrerPhone" required>
+      registerButton.addEventListener("click", (e) => {
+        e.preventDefault(); // Prevent default behavior
 
-            <label for="learnerPhoto">Upload Your Photo:</label>
-            <input type="file" id="learnerPhoto" name="learnerPhoto" accept="image/*" required>
-            
-            <label for="screenshot">Upload Payment Screenshot:</label>
-            <input type="file" id="screenshot" name="screenshot" accept="image/*" required>
-            
-            <button type="submit">Register</button>
-            <center>
-    Click Register and wait for some seconds
-    <br><br>
-    <button id="registerButton">Register</button>
-    <p id="countdownMessage" style="display: none;">Please wait... <span id="countdown"></span></p>
-</center>
-
-<script>
-    const registerButton = document.getElementById("registerButton");
-    const countdownMessage = document.getElementById("countdownMessage");
-    const countdown = document.getElementById("countdown");
-
-    registerButton.addEventListener("click", () => {
         let timeLeft = 60; // 1-minute countdown
 
         // Show the countdown message
@@ -76,22 +98,16 @@
         registerButton.disabled = true;
 
         const timer = setInterval(() => {
-            timeLeft--;
-            countdown.innerText = `${timeLeft} seconds`;
+          timeLeft--;
+          countdown.innerText = `${timeLeft} seconds`;
 
-            if (timeLeft <= 0) {
-                clearInterval(timer);
-                countdownMessage.style.display = "none"; // Hide countdown after 1 minute
-                registerButton.disabled = false; // Re-enable the button
-            }
+          if (timeLeft <= 0) {
+            clearInterval(timer);
+            countdownMessage.style.display = "none"; // Hide countdown after 1 minute
+            registerButton.disabled = false; // Re-enable the button
+          }
         }, 1000); // Update every second
-    });
-</script>
-    
-        </form>
-        
-        <p id="statusMessage"></p>
-    </section>
-    <script src="script.js"></script>
+      });
+    </script>
   </body>
 </html>
