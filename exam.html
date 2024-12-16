@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Message Page</title>
+    <title>Information Notice</title>
     <style>
       body {
         background-color: #f9f9f9;
@@ -15,7 +15,7 @@
       .message-box {
         text-align: center;
         background-color: #fff;
-        border: 2px solid #e74c3c;
+        border: 2px solid #3498db;
         border-radius: 10px;
         padding: 30px;
         box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
@@ -23,14 +23,16 @@
       }
 
       .message-box p {
-        color: #e74c3c;
+        color: #333;
         font-size: 1.2rem;
         margin: 10px 0;
-        font-weight: bold;
+        font-weight: normal;
       }
 
       .message-box p:first-child {
         font-size: 1.5rem;
+        font-weight: bold;
+        color: #3498db;
       }
 
       .message-box p:last-child {
@@ -39,7 +41,7 @@
       }
 
       .ok-button {
-        background-color: #e74c3c;
+        background-color: #3498db;
         color: #fff;
         border: none;
         border-radius: 5px;
@@ -50,15 +52,15 @@
       }
 
       .ok-button:hover {
-        background-color: #c0392b;
+        background-color: #2980b9;
       }
     </style>
   </head>
   <body>
     <div class="message-box">
-      <p>SORRY! THERE IS NOTHING HERE</p>
-      <p>EXAM WILL START AFTER THE COURSE ENDS.</p> 
-      <p>THE EXAM WILL START AFTER TWO WEEKS OF CLASS</p>
+      <p>Information Notice</p>
+      <p>The examination portal is not yet available.</p> 
+      <p>Exams will begin two weeks after the course concludes. Please check back later for further updates.</p>
       <button class="ok-button" onclick="returnHome()">OK</button>
     </div>
 
