@@ -14,13 +14,23 @@
         }
 
         body {
-            background-color: #f5f8fa;
             color: #14171a;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             padding: 20px;
+            min-height: 100vh;
+            animation: bgAnimation 10s infinite alternate;
+        }
+
+        /* Background Animation */
+        @keyframes bgAnimation {
+            0% { background-color: #f5f8fa; }
+            25% { background-color: #a1c4fd; }
+            50% { background-color: #c2e9fb; }
+            75% { background-color: #ff9a9e; }
+            100% { background-color: #fad0c4; }
         }
 
         header {
@@ -118,11 +128,22 @@
             color: #657786;
             text-align: center;
         }
+
+        /* Hide audio controls */
+        audio {
+            display: none;
+        }
     </style>
 </head>
 <body>
+    <!-- Background Music -->
+    <audio autoplay loop preload="auto">
+        <source src="tsound.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
     <header>
-        <img src="mdr1.jpg" alt="Mandera Crypto Academy Logo">
+        <img src="mdr1.jpg" alt="Pioneer Crypto Academy Logo">
         <h1>Pioneer Crypto Academy</h1>
         <p>Your Gateway to Cryptocurrency Education and Financial Freedom</p>
     </header>
