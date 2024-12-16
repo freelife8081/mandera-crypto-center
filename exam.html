@@ -1,5 +1,6 @@
 <html>
   <head>
+    <title>Message Page</title>
     <style>
       body {
         background-color: #f9f9f9;
@@ -36,20 +37,35 @@
         font-size: 1rem;
         color: #555;
       }
+
+      .ok-button {
+        background-color: #e74c3c;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 1rem;
+        cursor: pointer;
+        margin-top: 15px;
+      }
+
+      .ok-button:hover {
+        background-color: #c0392b;
+      }
     </style>
   </head>
-  <body onload="showPopup()">
-    <script>
-      function showPopup() {
-        alert("SORRY! THERE IS NOTHING HERE\nEXAM WILL START AFTER THE COURSE ENDS.\nTHE EXAM WILL START AFTER TWO WEEKS OF CLASS");
-        window.location.href = "https://freelife8081.github.io/mandera-crypto-center";
-      }
-    </script>
-
+  <body>
     <div class="message-box">
       <p>SORRY! THERE IS NOTHING HERE</p>
       <p>EXAM WILL START AFTER THE COURSE ENDS.</p> 
       <p>THE EXAM WILL START AFTER TWO WEEKS OF CLASS</p>
+      <button class="ok-button" onclick="returnHome()">OK</button>
     </div>
+
+    <script>
+      function returnHome() {
+        window.location.href = "https://freelife8081.github.io/mandera-crypto-center";
+      }
+    </script>
   </body>
 </html>
