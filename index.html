@@ -159,14 +159,14 @@
     <div class="particles-container" id="particles"></div>
 
     <!-- Audio Played Once -->
-    <audio id="bg-audio" preload="auto">
-        <source src="intro.mp3" type="audio/mpeg">
+    <audio id="b-audio" preload="auto">
+        <source src="music.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
     <script>
         // Audio Plays Once Per Visit
         window.addEventListener("load", function () {
-            const audio = document.getElementById("bg-audio");
+            const audio = document.getElementById("b-audio");
             if (sessionStorage.getItem("audioPlayed") !== "true") {
                 audio.play();
                 sessionStorage.setItem("audioPlayed", "true");
