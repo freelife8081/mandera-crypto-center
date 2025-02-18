@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 const resultScreenshot = await responseScreenshot.json();
 
                 if (responseScreenshot.ok && resultScreenshot.ok) {
-                    statusMessage.innerHTML = `Registration successful! <a href="https://wa.me/254791190744?text=I%20have%20done%20the%20registration.%20I%20need%20a%20username" target="_blank">Click here to get your unique username</a>.`;
+                    statusMessage.innerHTML = `Registration successful! <a href="https://wa.me/254721264385?text=I%20have%20done%20the%20registration.%20I%20need%20a%20username" target="_blank" style="color: #25D366; text-decoration: none;">Click here to get your unique username</a>.`;
 
                     statusMessage.style.color = "green";
                 } else {
