@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
         event.preventDefault();
 
         // Start the countdown immediately
-        let countdown = 30;
+        let countdown = 10;
         registerButton.disabled = true;
 
         const countdownTimer = setInterval(() => {
@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 const resultScreenshot = await responseScreenshot.json();
 
                 if (responseScreenshot.ok && resultScreenshot.ok) {
-                    statusMessage.innerHTML = `Registration successful! Click <a href="https://wa.me/254721264385?text=I%20have%20done%20the%20registration.%20I%20need%20a%20username" target="_blank" style="color: red; text-decoration: none;">here</a> to get your unique username.`;
+                    statusMessage.innerHTML = `Registration successful! Click <a href="https://wa.me/254791190745?text=I%20have%20done%20the%20registration.%20I%20need%20a%20username" target="_blank" style="color: red; text-decoration: none;">here</a> to get your unique username.`;
 
                     statusMessage.style.color = "green";
                 } else {
