@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Terms and Conditions</title>
+  <title>Terms and Conditions - Pioneer Crypto Academy</title>
   <style>
     /* General Styles */
     body {
@@ -12,7 +12,9 @@
       padding: 0;
       background: linear-gradient(120deg, #007BFF, #6C63FF);
       color: #333;
+      text-align: center;
     }
+
     .container {
       max-width: 90%;
       width: 800px;
@@ -22,31 +24,68 @@
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       animation: fadeIn 1.5s ease;
+      text-align: left;
     }
+
+    .logo {
+      display: block;
+      margin: 20px auto;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+    }
+
     h1 {
       text-align: center;
       color: #007BFF;
       margin-bottom: 20px;
       animation: bounce 2s infinite;
     }
+
     h2 {
       color: #6C63FF;
       margin-top: 20px;
     }
+
     p, ul {
       color: #555;
       line-height: 1.6;
       margin-bottom: 15px;
     }
+
     ul {
       padding-left: 20px;
     }
+
     ul li {
       margin-bottom: 10px;
     }
+
     .highlight {
       color: #d9534f;
       font-weight: bold;
+    }
+
+    /* Links */
+    .nav-links {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .nav-links a {
+      display: inline-block;
+      text-decoration: none;
+      font-size: 1rem;
+      color: #fff;
+      background-color: #007BFF;
+      padding: 10px 20px;
+      border-radius: 20px;
+      margin: 5px;
+      transition: background 0.3s;
+    }
+
+    .nav-links a:hover {
+      background-color: #0056b3;
     }
 
     /* Animation Keyframes */
@@ -85,12 +124,16 @@
   </style>
 </head>
 <body>
+
+  <!-- Logo -->
+  <img src="mdr1.jpg" alt="Pioneer Crypto Academy Logo" class="logo">
+
   <div class="container">
     <h1>Terms and Conditions</h1>
-    <p>Welcome to our course platform. By enrolling in our courses, you agree to abide by the following terms and conditions:</p>
+    <p>Welcome to Pioneer Crypto Academy. By enrolling in our courses, you agree to abide by the following terms and conditions:</p>
     
     <h2>Payment Policy</h2>
-    <p>All payments are final and <span class="highlight">non-refundable</span>. Please ensure you have reviewed all course details before making any payments.</p>
+    <p>All payments are final and <span class="highlight">non-refundable</span>. Please review all course details before making a payment.</p>
     
     <h2>Course Access</h2>
     <p>Access to course materials is granted only to registered and fully paid students. Sharing access with others is strictly prohibited.</p>
@@ -98,12 +141,12 @@
     <h2>Code of Conduct</h2>
     <ul>
       <li>Respect fellow students and instructors.</li>
-      <li>Refrain from sharing inappropriate content on the platform.</li>
-      <li>Engage actively and constructively during the sessions.</li>
+      <li>Do not share inappropriate content on the platform.</li>
+      <li>Engage actively and constructively during sessions.</li>
     </ul>
     
     <h2>Intellectual Property</h2>
-    <p>All course materials, including videos, documents, and resources, are the intellectual property of the course provider. Unauthorized sharing or reproduction is prohibited.</p>
+    <p>All course materials, including videos, documents, and resources, are the intellectual property of Pioneer Crypto Academy. Unauthorized sharing or reproduction is prohibited.</p>
     
     <h2>Termination</h2>
     <p>We reserve the right to terminate access to the course for any student who violates these terms without prior notice.</p>
@@ -113,5 +156,23 @@
     
     <p>If you have any questions regarding these terms, please contact us for clarification before proceeding.</p>
   </div>
+
+  <!-- Navigation Links -->
+  <div class="nav-links">
+    <a href="index.html">🏠 Home</a>
+    <a href="regist.html">📌 Register</a>
+    <a id="share-link" href="https://freelife8081.github.io/mandera-crypto-center/index.html">🔗 Share Site</a>
+  </div>
+
+  <script>
+    // Generate the share link dynamically
+    document.addEventListener("DOMContentLoaded", function () {
+      var shareText = encodeURIComponent("Join Pioneer Crypto Academy 💰 Learn Crypto:");
+      var shareUrl = encodeURIComponent(window.location.href);
+      var whatsappLink = "https://wa.me/?text=" + shareText + " " + shareUrl;
+      document.getElementById("share-link").setAttribute("href", whatsappLink);
+    });
+  </script>
+
 </body>
 </html>
