@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
         event.preventDefault();
 
         // Start the countdown immediately
-        let countdown = 10;
+        let countdown = 5;
         registerButton.disabled = true;
 
         const countdownTimer = setInterval(() => {
