@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
         event.preventDefault();
 
         if (registrationCompleted) {
-            showPopup("You have already registered. You cannot register twice.");
+            showSlideInPopup("You have already registered. You cannot register twice.");
             return;
         }
 
@@ -114,43 +114,38 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Function to show popup notification
-    function showPopup(message) {
-        const popup = document.createElement("div");
-        popup.style.position = "fixed";
-        popup.style.top = "50%";
-        popup.style.left = "50%";
-        popup.style.transform = "translate(-50%, -50%)";
-        popup.style.backgroundColor = "#fff";
-        popup.style.padding = "20px";
-        popup.style.border = "2px solid #ff0000";
-        popup.style.borderRadius = "8px";
-        popup.style.boxShadow = "0 0 10px rgba(0,0,0,0.3)";
-        popup.style.zIndex = "1000";
-        popup.style.textAlign = "center";
-        popup.style.fontSize = "16px";
-        popup.style.width = "300px";
+    // Function to show slide-in popup notification
+    function showSlideInPopup(message) {
+        let popup = document.getElementById("slideInPopup");
+        if (!popup) {
+            popup = document.createElement("div");
+            popup.id = "slideInPopup";
+            popup.style.position = "fixed";
+            popup.style.top = "-100px"; // Start off-screen
+            popup.style.left = "50%";
+            popup.style.transform = "translateX(-50%)";
+            popup.style.backgroundColor = "#ff0000";
+            popup.style.color = "#fff";
+            popup.style.padding = "15px 20px";
+            popup.style.borderRadius = "5px";
+            popup.style.boxShadow = "0px 4px 6px rgba(0, 0, 0, 0.1)";
+            popup.style.fontSize = "16px";
+            popup.style.textAlign = "center";
+            popup.style.transition = "top 0.5s ease-in-out";
+            popup.style.zIndex = "1000";
+            popup.style.width = "90%";
+            popup.style.maxWidth = "400px";
+            popup.style.fontWeight = "bold";
 
-        const popupText = document.createElement("p");
-        popupText.textContent = message;
-        popup.appendChild(popupText);
+            document.body.appendChild(popup);
+        }
 
-        const closeButton = document.createElement("button");
-        closeButton.textContent = "OK";
-        closeButton.style.marginTop = "10px";
-        closeButton.style.padding = "8px 12px";
-        closeButton.style.border = "none";
-        closeButton.style.backgroundColor = "#ff0000";
-        closeButton.style.color = "#fff";
-        closeButton.style.borderRadius = "4px";
-        closeButton.style.cursor = "pointer";
+        popup.textContent = message;
+        popup.style.top = "20px"; // Slide in
 
-        closeButton.addEventListener("click", function () {
-            document.body.removeChild(popup);
-        });
-
-        popup.appendChild(closeButton);
-        document.body.appendChild(popup);
+        setTimeout(() => {
+            popup.style.top = "-100px"; // Slide out after 3 seconds
+        }, 3000);
     }
 
     // Notification Dismiss Handler
