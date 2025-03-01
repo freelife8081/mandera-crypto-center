@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const registerButton = form.querySelector("button[type='submit']");
     const statusMessage = document.getElementById("statusMessage");
 
-    let registrationCompleted = false; // Flag to track if registration was successful
+    let registrationCompleted = false; // Flag to prevent multiple submissions
 
     form.addEventListener("submit", async function (event) {
         event.preventDefault();
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        // Start the countdown immediately
+        // Start the countdown
         let countdown = 5;
         registerButton.disabled = true;
 
@@ -136,7 +136,6 @@ document.addEventListener("DOMContentLoaded", function () {
             popup.style.width = "90%";
             popup.style.maxWidth = "400px";
             popup.style.fontWeight = "bold";
-
             document.body.appendChild(popup);
         }
 
