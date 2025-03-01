@@ -9,8 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
         event.preventDefault();
 
         if (registrationCompleted) {
-            statusMessage.textContent = "You have already registered.";
-            statusMessage.style.color = "red";
+            showPopup("You have already registered. You cannot register twice.");
             return;
         }
 
@@ -113,6 +112,45 @@ document.addEventListener("DOMContentLoaded", function () {
             statusMessage.textContent = `An error occurred: ${error.message}`;
             statusMessage.style.color = "red";
         }
+    }
+
+    // Function to show popup notification
+    function showPopup(message) {
+        const popup = document.createElement("div");
+        popup.style.position = "fixed";
+        popup.style.top = "50%";
+        popup.style.left = "50%";
+        popup.style.transform = "translate(-50%, -50%)";
+        popup.style.backgroundColor = "#fff";
+        popup.style.padding = "20px";
+        popup.style.border = "2px solid #ff0000";
+        popup.style.borderRadius = "8px";
+        popup.style.boxShadow = "0 0 10px rgba(0,0,0,0.3)";
+        popup.style.zIndex = "1000";
+        popup.style.textAlign = "center";
+        popup.style.fontSize = "16px";
+        popup.style.width = "300px";
+
+        const popupText = document.createElement("p");
+        popupText.textContent = message;
+        popup.appendChild(popupText);
+
+        const closeButton = document.createElement("button");
+        closeButton.textContent = "OK";
+        closeButton.style.marginTop = "10px";
+        closeButton.style.padding = "8px 12px";
+        closeButton.style.border = "none";
+        closeButton.style.backgroundColor = "#ff0000";
+        closeButton.style.color = "#fff";
+        closeButton.style.borderRadius = "4px";
+        closeButton.style.cursor = "pointer";
+
+        closeButton.addEventListener("click", function () {
+            document.body.removeChild(popup);
+        });
+
+        popup.appendChild(closeButton);
+        document.body.appendChild(popup);
     }
 
     // Notification Dismiss Handler
