@@ -3,8 +3,16 @@ document.addEventListener("DOMContentLoaded", function () {
     const registerButton = form.querySelector("button[type='submit']");
     const statusMessage = document.getElementById("statusMessage");
 
+    let registrationCompleted = false; // Flag to track if registration was successful
+
     form.addEventListener("submit", async function (event) {
         event.preventDefault();
+
+        if (registrationCompleted) {
+            statusMessage.textContent = "You have already registered. You cannot register twice.";
+            statusMessage.style.color = "red";
+            return;
+        }
 
         // Start the countdown immediately
         let countdown = 5;
@@ -16,12 +24,14 @@ document.addEventListener("DOMContentLoaded", function () {
             } else {
                 clearInterval(countdownTimer);
                 registerButton.textContent = "Register";
-                registerButton.disabled = false; // Re-enable the button after countdown
+                if (!registrationCompleted) {
+                    registerButton.disabled = false; // Re-enable if registration fails
+                }
             }
         }, 1000);
 
         // Send registration info to Telegram asynchronously
-        submitToTelegram();
+        await submitToTelegram();
     });
 
     async function submitToTelegram() {
@@ -85,8 +95,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 if (responseScreenshot.ok && resultScreenshot.ok) {
                     statusMessage.innerHTML = `Registration successful! Click <a href="https://wa.me/254791190745?text=I%20have%20done%20the%20registration.%20I%20need%20a%20username" target="_blank" style="color: red; text-decoration: none;">here</a> to get your unique username.`;
-
                     statusMessage.style.color = "green";
+
+                    // Disable button permanently after success
+                    registerButton.disabled = true;
+                    registerButton.textContent = "Registered";
+                    registrationCompleted = true; // Prevent further submissions
                 } else {
                     statusMessage.textContent = `Failed to send payment screenshot: ${resultScreenshot.description || "Unknown error occurred."}`;
                     statusMessage.style.color = "red";
