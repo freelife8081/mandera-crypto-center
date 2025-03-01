@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
         event.preventDefault();
 
         if (registrationCompleted) {
-            statusMessage.textContent = "You have already registered. You cannot register twice.";
+            statusMessage.textContent = "You have already registered.";
             statusMessage.style.color = "red";
             return;
         }
