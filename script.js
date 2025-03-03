@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         // Start the countdown
-        let countdown = 5;
+        let countdown = 10;
         registerButton.disabled = true;
 
         const countdownTimer = setInterval(() => {
