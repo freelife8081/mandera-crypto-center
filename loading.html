@@ -31,18 +31,29 @@
     </style>
 </head>
 <body>
-    <div class="loading-container" id="loading-text">
-        Preparing Lesson<span class="dots"></span> Please wait.
+    <div class="loading-container">
+        <div id="loading-text">🚀 Get ready to level up!<span class="dots"></span></div>
+        <div id="countdown">Redirecting in <span id="timer">10</span> seconds</div>
     </div>
 
     <script>
-        setTimeout(() => {
-            document.getElementById("loading-text").textContent = "Boom! Lesson is ready";
-        }, 6000); // Change text at 6 seconds
+        let timeLeft = 10;
+        const countdownElement = document.getElementById("timer");
+        const loadingTextElement = document.getElementById("loading-text");
 
-        setTimeout(() => {
-            window.location.href = "lessons.html";
-        }, 11000); // Redirect after 11 seconds
+        const countdownInterval = setInterval(() => {
+            timeLeft--;
+            countdownElement.textContent = timeLeft;
+
+            if (timeLeft === 5) {
+                loadingTextElement.textContent = "🔥 Boom! Your lesson is unlocked!";
+            }
+
+            if (timeLeft === 0) {
+                clearInterval(countdownInterval);
+                window.location.href = "lessons.html";
+            }
+        }, 1000);
     </script>
 </body>
 </html>
