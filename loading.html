@@ -15,6 +15,8 @@
         }
         .loading-container {
             text-align: center;
+            font-size: 1.5em;
+            font-weight: bold;
         }
         .dots::after {
             content: "";
@@ -27,15 +29,20 @@
             100% { content: "..."; }
         }
     </style>
-    <script>
-        setTimeout(() => {
-            window.location.href = "lessons.html";
-        }, 10000); // Redirect after 10 seconds
-    </script>
 </head>
 <body>
-    <div class="loading-container">
-        <h2>Loading lessons<span class="dots"></span> Please wait.</h2>
+    <div class="loading-container" id="loading-text">
+        Preparing Lesson<span class="dots"></span> Please wait.
     </div>
+
+    <script>
+        setTimeout(() => {
+            document.getElementById("loading-text").textContent = "Boom! Lesson is ready";
+        }, 6000); // Change text at 6 seconds
+
+        setTimeout(() => {
+            window.location.href = "lessons.html";
+        }, 11000); // Redirect after 11 seconds
+    </script>
 </body>
 </html>
