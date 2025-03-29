@@ -2,121 +2,77 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pioneer Crypto Academy</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         /* General Reset */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
 
-        /* Body with Optimized Animation Background */
         body {
-            color: #14171a;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            color: #fff;
+            background: linear-gradient(135deg, #000428, #004e92);
+            text-align: center;
             padding: 20px;
-            min-height: 100vh;
-            background: #000;
-            overflow-x: hidden;
-            position: relative;
         }
 
-        /* Particle Animation */
-        @keyframes moveParticles {
-            from {
-                transform: translateY(-10vh);
-                opacity: 0.8;
-            }
-            to {
-                transform: translateY(110vh);
-                opacity: 0;
-            }
+        header {
+            padding: 20px 0;
         }
 
-        .particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: #00ffea;
+        .logo img {
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
-            animation: moveParticles 8s linear infinite;
-            opacity: 0.7;
         }
 
-        .particle:nth-child(odd) {
-            background: #1da1f2;
-            animation-duration: 10s;
+        h1 {
+            font-size: 2rem;
+            color: #00d9ff;
         }
 
-        /* Generate fewer particles */
-        .particles-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: 0;
-        }
-
-        }
-
-        header h1 {
-            font-size: 1.8rem;
-            color: #1da1f2;
+        p {
+            font-size: 1rem;
+            color: #ddd;
             margin-bottom: 10px;
         }
 
-        header p {
-            font-size: 1rem;
-            color: #657786;
-            margin-bottom: 20px;
-        }
-
         .nav-links {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 30px;
-            z-index: 1;
+            margin: 20px 0;
         }
 
         .nav-links a {
             text-decoration: none;
-            font-size: 1rem;
-            color: #1da1f2;
-            border: 1px solid #1da1f2;
-            padding: 8px 16px;
-            border-radius: 20px;
-            transition: background-color 0.3s, color 0.3s;
+            color: #fff;
+            background: #007bff;
+            padding: 10px 20px;
+            border-radius: 30px;
+            margin: 5px;
+            transition: background 0.3s;
         }
 
         .nav-links a:hover {
-            background-color: #1da1f2;
-            color: #fff;
+            background: #0056b3;
         }
 
         section {
-            background-color: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             padding: 20px;
-            margin-bottom: 20px;
-            width: 100%;
+            margin: 20px auto;
+            width: 90%;
             max-width: 600px;
-            text-align: center;
-            z-index: 1;
+            backdrop-filter: blur(10px);
         }
 
         .discount p {
-            color: #e0245e;
+            font-size: 1.2rem;
+            color: #ff3860;
             font-weight: bold;
         }
 
@@ -124,92 +80,62 @@
             display: inline-block;
             text-decoration: none;
             color: #fff;
-            background-color: #1da1f2;
+            background: #ff3860;
             padding: 10px 20px;
-            border-radius: 20px;
-            font-size: 1rem;
+            border-radius: 30px;
             margin-top: 15px;
+        }
+
+        .regist:hover {
+            background: #e0245e;
         }
 
         footer {
             margin-top: 30px;
             font-size: 0.9rem;
-            color: #657786;
-            text-align: center;
-            z-index: 1;
         }
 
-        audio {
-            display: none;
+        .footer-links a {
+            text-decoration: none;
+            color: #00d9ff;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #007bff;
         }
     </style>
 </head>
 <body>
-    <!-- Particle Background -->
-    <div class="particles-container" id="particles"></div>
-    </div>
-
-    <!-- Audio Played Once -->
-    <audio id="b-audio" preload="auto">
-        <source src="music.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-    <script>
-        // Audio Plays Once Per Visit
-        window.addEventListener("load", function () {
-            const audio = document.getElementById("b-audio");
-            if (sessionStorage.getItem("audioPlayed") !== "true") {
-                audio.play();
-                sessionStorage.setItem("audioPlayed", "true");
-            }
-        });
-
-        // Generate Optimized Particles
-        function generateParticles() {
-            const container = document.getElementById("particles");
-            for (let i = 0; i < 30; i++) { // Reduced count for better performance
-                const particle = document.createElement("div");
-                particle.className = "particle";
-                particle.style.left = Math.random() * 100 + "vw";
-                particle.style.animationDelay = Math.random() * 8 + "s";
-                particle.style.opacity = Math.random();
-                container.appendChild(particle);
-            }
-        }
-        generateParticles();
-    </script>
-
-    <!-- Header -->
     <header>
         <div class="logo">
-            <img src="pcalogo.png" style="width: 100px; height: 100px; border-radius: 50%;" alt="School Logo"></div>
+            <img src="pcalogo.png" alt="School Logo">
+        </div>
         <h1>Pioneer Crypto Academy</h1>
         <p>Your Gateway to Cryptocurrency Education and Financial Freedom</p>
     </header>
 
-    <!-- Navigation Links -->
     <nav class="nav-links">
         <a href="https://chat.whatsapp.com/LHESRnETIP49HFKsKGTSqn" target="_blank">WA Group</a>
         <a href="https://huseiney.github.io/registered.users/">Join Class</a>
         <a href="loading.html">Access Lessons</a>
     </nav>
 
-    <!-- Content Sections -->
     <section class="intro">
         <h2>About Us</h2>
         <p>At Pioneer Crypto Academy, we provide comprehensive cryptocurrency education to empower our students.</p>
     </section>
 
     <section class="referral">
-    <h2>Referral Program</h2>
-    <p>Earn KES 100 for each referral!</p>
-    <p><strong style="color: red;">Note:</strong> You must refer at least <strong style="color: red;">10 people</strong> to be eligible for the referral bonus.</p>
-</section>
-
+        <h2>Referral Program</h2>
+        <p>Earn KES 100 for each referral!</p>
+        <p><strong>Note:</strong> You must refer at least <strong>10 people</strong> to be eligible for the referral bonus.</p>
+    </section>
 
     <section class="freedom">
         <h2>Achieve Financial Freedom</h2>
-        <p>Join us to learn how you can gain financial independence through cryptocurrency and blockchain technology. With hands-on training and real-world insights, Pioneer Crypto Academy is here to guide you toward a financially secure future.</p>
+        <p>Join us to learn how you can gain financial independence through cryptocurrency and blockchain technology.</p>
     </section>
 
     <section class="discount">
@@ -226,27 +152,6 @@
             <a href="https://wa.me/254791190745" target="_blank">Contact Us</a>
             <a href="terms.html">Read Our Terms</a>
         </div>
-    </footer>
-
-    <style>
-        .footer-links {
-            margin-top: 10px;
-        }
-
-        .footer-links a {
-            text-decoration: none;
-            color: #1da1f2;
-            font-size: 0.9rem;
-            margin: 0 10px;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: #0c85d0;
-        }
-    </style>
-
-        <p>Pioneer Crypto Academy &copy; 2025. All Rights Reserved.</p>
     </footer>
 </body>
 </html>
