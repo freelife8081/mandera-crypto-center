@@ -113,40 +113,6 @@
         </section>
 
         <section class="registration">
-            <h2>Register your name</h2>
-            <form id="registrationForm">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" name="name" placeholder="Your name" required>
-
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone" placeholder="Phone number" required>
-
-                <label for="age">Age</label>
-                <input type="number" id="age" name="age" min="10" placeholder="Age" required>
-
-                <label for="gender">Gender</label>
-                <select id="gender" name="gender" required>
-                    <option value="">Select</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                </select>
-
-                <label for="referrerName">Referrer's Name</label>
-                <input type="text" id="referrerName" name="referrerName" placeholder="Referrer Name" required>
-
-                <label for="referrerPhone">Referrer's Phone Number</label>
-                <input type="tel" id="referrerPhone" name="referrerPhone" placeholder="Phone number" required>
-
-                <label for="learnerPhoto">Upload Your Photo</label>
-                <input type="file" id="learnerPhoto" name="learnerPhoto" accept="image/*" required>
-
-                <label for="screenshot">Payment Screenshot</label>
-                <input type="file" id="screenshot" name="screenshot" accept="image/*" required>
-
-                <button type="submit">Register</button>
-            </form>
-
-            <p id="statusMessage"></p>
             <div id="notice" class="notice">
     <p>Hurry up! Only <strong>20 slots</strong> left before the fee increases from <strong>2000</strong> to <strong>3000</strong> KES!</p>
     <button onclick="dismissNotice()">OK</button>
@@ -192,6 +158,40 @@
     }
 </script>
 
+            <h2>Register your name</h2>
+            <form id="registrationForm">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name" required>
+
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="Phone number" required>
+
+                <label for="age">Age</label>
+                <input type="number" id="age" name="age" min="10" placeholder="Age" required>
+
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender" required>
+                    <option value="">Select</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+
+                <label for="referrerName">Referrer's Name</label>
+                <input type="text" id="referrerName" name="referrerName" placeholder="Referrer Name" required>
+
+                <label for="referrerPhone">Referrer's Phone Number</label>
+                <input type="tel" id="referrerPhone" name="referrerPhone" placeholder="Phone number" required>
+
+                <label for="learnerPhoto">Upload Your Photo</label>
+                <input type="file" id="learnerPhoto" name="learnerPhoto" accept="image/*" required>
+
+                <label for="screenshot">Payment Screenshot</label>
+                <input type="file" id="screenshot" name="screenshot" accept="image/*" required>
+
+                <button type="submit">Register</button>
+            </form>
+
+            <p id="statusMessage"></p>
         </section>
     </div>
 
