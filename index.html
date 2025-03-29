@@ -221,12 +221,15 @@
     <div id="notice" class="notice">
     <p>Hurry up! Only <strong>20 slots</strong> left before the fee increases from <strong>2000</strong> to <strong>3000</strong> KES!</p>
     <button onclick="dismissNotice()">OK</button>
+        <div id="notice" class="notice">
+    <p>Hurry up! Only <strong>20 slots</strong> left before the fee increases from <strong>2000</strong> to <strong>3000</strong> KES!</p>
+    <button onclick="dismissNotice()">OK</button>
 </div>
 
 <style>
     .notice {
         position: fixed;
-        bottom: -100px;
+        bottom: -100%;
         left: 50%;
         transform: translateX(-50%);
         background: #e0245e;
@@ -254,15 +257,14 @@
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         setTimeout(() => {
-            document.getElementById("notice").style.bottom = "20px";
+            document.getElementById("notice").style.bottom = "0";
         }, 1000);
     });
 
     function dismissNotice() {
-        document.getElementById("notice").style.bottom = "-100px";
+        document.getElementById("notice").style.bottom = "-100%";
     }
 </script>
-
 
     <footer>
         <p>Pioneer Crypto Academy &copy; 2025. All Rights Reserved.</p>
