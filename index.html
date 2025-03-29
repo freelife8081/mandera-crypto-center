@@ -195,53 +195,6 @@
     </nav>
 
     <!-- Content Sections -->
-    <section>
-        <div id="notice" class="notice">
-    <p>Hurry up! Only <strong>20 slots</strong> left before the fee increases from <strong>2000</strong> to <strong>3000</strong> KES!</p>
-    <button onclick="dismissNotice()">OK</button>
-</div>
-
-<style>
-    .notice {
-        position: fixed;
-        bottom: -100%;
-        left: 50%;
-        transform: translateX(-50%);
-        background: #e0245e;
-        color: white;
-        padding: 15px;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        transition: bottom 0.5s ease-in-out;
-    }
-
-    .notice button {
-        background: white;
-        color: #e0245e;
-        border: none;
-        padding: 5px 10px;
-        cursor: pointer;
-        border-radius: 5px;
-        font-weight: bold;
-    }
-</style>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        setTimeout(() => {
-            document.getElementById("notice").style.bottom = "0";
-        }, 1000);
-    });
-
-    function dismissNotice() {
-        document.getElementById("notice").style.bottom = "-100%";
-    }
-</script>
-
-    </section>
     <section class="intro">
         <h2>About Us</h2>
         <p>At Pioneer Crypto Academy, we provide comprehensive cryptocurrency education to empower our students.</p>
@@ -265,6 +218,7 @@
         <p>The initial fee was <span style="text-decoration: line-through;">3000</span> KES, but now it's only <span style="color: red;">2000</span> KES!</p>
         <a class="regist" href="regist.html">Register Now</a>
     </section>
+
     <footer>
         <p>Pioneer Crypto Academy &copy; 2025. All Rights Reserved.</p>
         <div class="footer-links">
